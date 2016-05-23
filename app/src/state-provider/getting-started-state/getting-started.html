@@ -11,8 +11,9 @@
 
     <div class='actualCode'>
       <ul class='codeNav'>
-        <li ng-click='showHTML = true;'> index.html </li>
-        <li ng-click='showHTML = false;'> app.js </li>
+        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>
+        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>
+        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>
       </ul>
       <div class='preCode' ng-show='showHTML'>
         <pre><code class='html'>
@@ -20,9 +21,15 @@
         </code></pre>
       </div>
 
-      <div class='preCode' ng-hide='showHTML'>
+      <div class='preCode' ng-show='showJavascript'>
         <pre>
           <code> {{javascript}} </code>
+        </pre>
+      </div>
+
+      <div class='preCode' ng-show='showDescription'>
+        <pre>
+          <code> {{description}} </code>
         </pre>
       </div>
     </div>
