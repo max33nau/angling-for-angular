@@ -6,6 +6,47 @@
   color: white !important;
 }
 
-.padding-5 {
-  padding: 5px !important;
+.containsCode {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.codeNav {
+  list-style: none;
+  background-color: black;
+  color: red;
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid red;
+  text-align: center;
+  li {
+    display: inline-block;
+    padding: 0 20px;
+    margin: 0 10px;
+    &:hover {
+      background-color: green;
+    }
+  }
+}
+
+.preCode {
+  margin-top: -10px;
+}
+
+.renderedPage {
+  max-width: 100%;
+  background-color: #fff;
+  border: 2px solid black;
+  padding: 10px;
+  color: black;
+  margin: 20px;
+  width: 500px;
+  height: 600px;
+}
+
+.actualCode {
+  height: 640px;
 }
