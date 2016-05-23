@@ -58,22 +58,34 @@
 	
 	__webpack_require__(4);
 	
-	var _stateProvider = __webpack_require__(8);
+	__webpack_require__(8);
+	
+	var _stateProvider = __webpack_require__(10);
 	
 	var _stateProvider2 = _interopRequireDefault(_stateProvider);
 	
-	var _stateControllers = __webpack_require__(11);
+	var _stateControllers = __webpack_require__(21);
 	
 	var _stateControllers2 = _interopRequireDefault(_stateControllers);
 	
+	var _directives = __webpack_require__(23);
+	
+	var _directives2 = _interopRequireDefault(_directives);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	/* UI-Router State Provider Config */
-	
-	
-	var app = _angular2.default.module('myApp', [_angularUiRouter2.default, _stateControllers2.default]);
-	
 	/* State Controllers */
+	
+	
+	/* STYLES */
+	
+	
+	var app = _angular2.default.module('myApp', [_angularUiRouter2.default, _stateControllers2.default, _directives2.default]);
+	
+	/* Directives */
+	
+	
+	/* UI-Router State Provider Config */
 	
 	
 	/* Thank you http://purecss.io/layouts/side-menu/ for the response side menu */
@@ -82,7 +94,43 @@
 	app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 	  $urlRouterProvider.otherwise('/');
 	  (0, _stateProvider2.default)($stateProvider);
-	}]).run(function ($rootScope, $state) {});
+	}]).run(function ($rootScope, $state) {
+	  $rootScope.root = {};
+	  $rootScope.root.nav = {};
+	  $rootScope.root.states = ['', 'home', 'about-me', 'what-is-angular', 'why-angular', ''];
+	  $rootScope.root.headerNames = ['', 'Home', 'About Me', 'So What Is AngularJS?', 'Why Choose Angular?', ''];
+	  $rootScope.root.nav.previous = $rootScope.root.states[0];
+	  $rootScope.root.nav.current = $rootScope.root.states[1];
+	  $rootScope.root.nav.next = $rootScope.root.states[2];
+	  $rootScope.root.activeLink = '';
+	  $rootScope.root.goForward = function () {
+	    var ii = $rootScope.root.headerNames.indexOf($rootScope.root.nav.next);
+	    var nextState = $rootScope.root.states[ii];
+	    $state.go(nextState);
+	  };
+	  $rootScope.root.goBack = function () {
+	    var ii = $rootScope.root.headerNames.indexOf($rootScope.root.nav.previous);
+	    var nextState = $rootScope.root.states[ii];
+	    $state.go(nextState);
+	  };
+	  $rootScope.$on('$stateChangeStart', function (event, toState) {
+	    $rootScope.root.activeLink = toState.name;
+	    $rootScope.root.ii = $rootScope.root.states.indexOf(toState.name);
+	    $rootScope.root.nav.previous = $rootScope.root.headerNames[$rootScope.root.ii - 1];
+	    $rootScope.root.nav.current = $rootScope.root.headerNames[$rootScope.root.ii];
+	    $rootScope.root.nav.next = $rootScope.root.headerNames[$rootScope.root.ii + 1];
+	    if (!$rootScope.root.nav.previous) {
+	      $rootScope.root.noPrevious = true;
+	    } else {
+	      $rootScope.root.noPrevious = false;
+	    }
+	    if (!$rootScope.root.nav.next) {
+	      $rootScope.root.noNext = true;
+	    } else {
+	      $rootScope.root.noNext = false;
+	    }
+	  });
+	});
 	
 	_angular2.default.element(document).ready(function () {
 	  _angular2.default.bootstrap(document, ['myApp']);
@@ -35548,7 +35596,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body {\n    color: #777;\n}\n\n.pure-img-responsive {\n    max-width: 100%;\n    height: auto;\n}\n\n/*\nAdd transition to containers so they can push in and out.\n*/\n#layout,\n#menu,\n.menu-link {\n    -webkit-transition: all 0.2s ease-out;\n    -moz-transition: all 0.2s ease-out;\n    -ms-transition: all 0.2s ease-out;\n    -o-transition: all 0.2s ease-out;\n    transition: all 0.2s ease-out;\n}\n\n/*\nThis is the parent `<div>` that contains the menu and the content area.\n*/\n#layout {\n    position: relative;\n    padding-left: 0;\n}\n    #layout.active #menu {\n        left: 150px;\n        width: 150px;\n    }\n\n    #layout.active .menu-link {\n        left: 150px;\n    }\n/*\nThe content `<div>` is where all your content goes.\n*/\n.content {\n    margin: 0 auto;\n    padding: 0 2em;\n    max-width: 800px;\n    margin-bottom: 50px;\n    line-height: 1.6em;\n}\n\n.header {\n     margin: 0;\n     color: #333;\n     text-align: center;\n     padding: 2.5em 2em 0;\n     border-bottom: 1px solid #eee;\n }\n    .header h1 {\n        margin: 0.2em 0;\n        font-size: 3em;\n        font-weight: 300;\n    }\n     .header h2 {\n        font-weight: 300;\n        color: #ccc;\n        padding: 0;\n        margin-top: 0;\n    }\n\n.content-subhead {\n    margin: 50px 0 20px 0;\n    font-weight: 300;\n    color: #888;\n}\n\n\n\n/*\nThe `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that\nappears on the left side of the page.\n*/\n\n#menu {\n    margin-left: -150px; /* \"#menu\" width */\n    width: 150px;\n    position: fixed;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    z-index: 1000; /* so the menu or its navicon stays above all content */\n    background: #191818;\n    overflow-y: auto;\n    -webkit-overflow-scrolling: touch;\n}\n    /*\n    All anchors inside the menu should be styled like this.\n    */\n    #menu a {\n        color: #999;\n        border: none;\n        padding: 0.6em 0 0.6em 0.6em;\n    }\n\n    /*\n    Remove all background/borders, since we are applying them to #menu.\n    */\n     #menu .pure-menu,\n     #menu .pure-menu ul {\n        border: none;\n        background: transparent;\n    }\n\n    /*\n    Add that light border to separate items into groups.\n    */\n    #menu .pure-menu ul,\n    #menu .pure-menu .menu-item-divided {\n        border-top: 1px solid #333;\n    }\n        /*\n        Change color of the anchor links on hover/focus.\n        */\n        #menu .pure-menu li a:hover,\n        #menu .pure-menu li a:focus {\n            background: #333;\n        }\n\n    /*\n    This styles the selected menu item `<li>`.\n    */\n    #menu .pure-menu-selected,\n    #menu .pure-menu-heading {\n        background: #1f8dd6;\n    }\n        /*\n        This styles a link within a selected menu item `<li>`.\n        */\n        #menu .pure-menu-selected a {\n            color: #fff;\n        }\n\n    /*\n    This styles the menu heading.\n    */\n    #menu .pure-menu-heading {\n        font-size: 110%;\n        color: #fff;\n        margin: 0;\n    }\n\n/* -- Dynamic Button For Responsive Menu -------------------------------------*/\n\n/*\nThe button to open/close the Menu is custom-made and not part of Pure. Here's\nhow it works:\n*/\n\n/*\n`.menu-link` represents the responsive menu toggle that shows/hides on\nsmall screens.\n*/\n.menu-link {\n    position: fixed;\n    display: block; /* show this only on small screens */\n    top: 0;\n    left: 0; /* \"#menu width\" */\n    background: #000;\n    background: rgba(0,0,0,0.7);\n    font-size: 10px; /* change this value to increase/decrease button size */\n    z-index: 10;\n    width: 2em;\n    height: auto;\n    padding: 2.1em 1.6em;\n}\n\n    .menu-link:hover,\n    .menu-link:focus {\n        background: #000;\n    }\n\n    .menu-link span {\n        position: relative;\n        display: block;\n    }\n\n    .menu-link span,\n    .menu-link span:before,\n    .menu-link span:after {\n        background-color: #fff;\n        width: 100%;\n        height: 0.2em;\n    }\n\n        .menu-link span:before,\n        .menu-link span:after {\n            position: absolute;\n            margin-top: -0.6em;\n            content: \" \";\n        }\n\n        .menu-link span:after {\n            margin-top: 0.6em;\n        }\n\n\n/* -- Responsive Styles (Media Queries) ------------------------------------- */\n\n/*\nHides the menu at `48em`, but modify this based on your app's needs.\n*/\n@media (min-width: 48em) {\n\n    .header,\n    .content {\n        padding-left: 2em;\n        padding-right: 2em;\n    }\n\n    #layout {\n        padding-left: 150px; /* left col width \"#menu\" */\n        left: 0;\n    }\n    #menu {\n        left: 150px;\n    }\n\n    .menu-link {\n        position: fixed;\n        left: 150px;\n        display: none;\n    }\n\n    #layout.active .menu-link {\n        left: 150px;\n    }\n}\n\n@media (max-width: 48em) {\n    /* Only apply this when the window is small. Otherwise, the following\n    case results in extra padding on the left:\n        * Make the window small.\n        * Tap the menu to trigger the active state.\n        * Make the window large again.\n    */\n    #layout.active {\n        position: relative;\n        left: 150px;\n    }\n}\n", ""]);
+	exports.push([module.id, "body {\n    color: #777;\n}\n\n.pure-img-responsive {\n    max-width: 100%;\n    height: auto;\n}\n\n/*\nAdd transition to containers so they can push in and out.\n*/\n#layout,\n#menu,\n.menu-link {\n    -webkit-transition: all 0.2s ease-out;\n    -moz-transition: all 0.2s ease-out;\n    -ms-transition: all 0.2s ease-out;\n    -o-transition: all 0.2s ease-out;\n    transition: all 0.2s ease-out;\n}\n\n/*\nThis is the parent `<div>` that contains the menu and the content area.\n*/\n#layout {\n    position: relative;\n    padding-left: 0;\n}\n    #layout.active #menu {\n        left: 150px;\n        width: 150px;\n    }\n\n    #layout.active .menu-link {\n        left: 150px;\n    }\n/*\nThe content `<div>` is where all your content goes.\n*/\n.content {\n    margin: 0 auto;\n    padding: 0 2em;\n    max-width: 800px;\n    margin-bottom: 50px;\n    line-height: 1.6em;\n}\n\n.header {\n     margin: 0;\n     color: #333;\n     text-align: center;\n     padding: 2.5em 2em 0;\n     border-bottom: 1px solid #eee;\n }\n    .header h1 {\n        margin: 0.2em 0;\n        font-size: 3em;\n        font-weight: 300;\n    }\n     .header h2 {\n        font-weight: 300;\n        color: #ccc;\n        padding: 0;\n        margin-top: 0;\n    }\n\n.content-subhead {\n    margin: 50px 0 20px 0;\n    font-weight: 300;\n    color: #888;\n}\n\n\n\n/*\nThe `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that\nappears on the left side of the page.\n*/\n\n#menu {\n    margin-left: -150px; /* \"#menu\" width */\n    width: 150px;\n    position: fixed;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    z-index: 1000; /* so the menu or its navicon stays above all content */\n    background: #191818;\n    overflow-y: auto;\n    -webkit-overflow-scrolling: touch;\n}\n    /*\n    All anchors inside the menu should be styled like this.\n    */\n    #menu a {\n        color: #999;\n        border: none;\n        padding: 0.6em 0 0.6em 0.6em;\n    }\n\n    /*\n    Remove all background/borders, since we are applying them to #menu.\n    */\n     #menu .pure-menu,\n     #menu .pure-menu ul {\n        border: none;\n        background: transparent;\n    }\n\n    /*\n    Add that light border to separate items into groups.\n    */\n    #menu .pure-menu ul,\n    #menu .pure-menu .menu-item-divided {\n        border-top: 1px solid #333;\n    }\n        /*\n        Change color of the anchor links on hover/focus.\n        */\n        #menu .pure-menu li a:hover,\n        #menu .pure-menu li a:focus {\n            background: #333;\n        }\n\n    /*\n    This styles the selected menu item `<li>`.\n    */\n    #menu .pure-menu-selected,\n    #menu .pure-menu-heading {\n        background: #1f8dd6;\n    }\n        /*\n        This styles a link within a selected menu item `<li>`.\n        */\n        #menu .pure-menu-selected a {\n            color: #fff;\n        }\n\n    /*\n    This styles the menu heading.\n    */\n    #menu .pure-menu-heading {\n        font-size: 110%;\n        color: #fff;\n        margin: 0;\n    }\n\n/* -- Dynamic Button For Responsive Menu -------------------------------------*/\n\n/*\nThe button to open/close the Menu is custom-made and not part of Pure. Here's\nhow it works:\n*/\n\n/*\n`.menu-link` represents the responsive menu toggle that shows/hides on\nsmall screens.\n*/\n.menu-link {\n    position: fixed;\n    display: block; /* show this only on small screens */\n    top: 0;\n    left: 0; /* \"#menu width\" */\n    background: #000;\n    background: rgba(0,0,0,0.7);\n    font-size: 10px; /* change this value to increase/decrease button size */\n    z-index: 10;\n    width: 2em;\n    height: auto;\n    padding: 2.1em 1.6em;\n}\n\n    .menu-link:hover,\n    .menu-link:focus {\n        background: #000;\n    }\n\n    .menu-link span {\n        position: relative;\n        display: block;\n    }\n\n    .menu-link span,\n    .menu-link span:before,\n    .menu-link span:after {\n        background-color: #fff;\n        width: 100%;\n        height: 0.2em;\n    }\n\n        .menu-link span:before,\n        .menu-link span:after {\n            position: absolute;\n            margin-top: -0.6em;\n            content: \" \";\n        }\n\n        .menu-link span:after {\n            margin-top: 0.6em;\n        }\n\n\n/* -- Responsive Styles (Media Queries) ------------------------------------- */\n\n/*\nHides the menu at `100em`, but modify this based on your app's needs.\n*/\n@media (min-width: 100em) {\n\n    .header,\n    .content {\n        padding-left: 2em;\n        padding-right: 2em;\n    }\n\n    #layout {\n        padding-left: 150px; /* left col width \"#menu\" */\n        left: 0;\n    }\n    #menu {\n        left: 150px;\n    }\n\n    .menu-link {\n        position: fixed;\n        left: 150px;\n        display: none;\n    }\n\n    #layout.active .menu-link {\n        left: 150px;\n    }\n}\n\n@media (max-width: 100em) {\n    /* Only apply this when the window is small. Otherwise, the following\n    case results in extra padding on the left:\n        * Make the window small.\n        * Tap the menu to trigger the active state.\n        * Make the window large again.\n    */\n    #layout.active {\n        position: relative;\n        left: 150px;\n    }\n}\n", ""]);
 	
 	// exports
 
@@ -35865,24 +35913,44 @@
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	exports.default = function ($stateProvider) {
-	  $stateProvider.state('home', _home2.default);
-	};
-	
-	var _home = __webpack_require__(9);
-	
-	var _home2 = _interopRequireDefault(_home);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	// load the styles
+	var content = __webpack_require__(9);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/postcss-loader/index.js!./../../node_modules/sass-loader/index.js!./main.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/postcss-loader/index.js!./../../node_modules/sass-loader/index.js!./main.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
 
 /***/ },
 /* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(6)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".currentLink {\n  color: white !important; }\n\n.padding-5 {\n  padding: 5px !important; }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35891,7 +35959,39 @@
 	  value: true
 	});
 	
-	var _home = __webpack_require__(10);
+	exports.default = function ($stateProvider) {
+	  $stateProvider.state('home', _home2.default).state('about-me', _aboutMe2.default).state('what-is-angular', _whatIsAngular2.default).state('why-angular', _whyAngular2.default);
+	};
+	
+	var _home = __webpack_require__(11);
+	
+	var _home2 = _interopRequireDefault(_home);
+	
+	var _aboutMe = __webpack_require__(13);
+	
+	var _aboutMe2 = _interopRequireDefault(_aboutMe);
+	
+	var _whatIsAngular = __webpack_require__(17);
+	
+	var _whatIsAngular2 = _interopRequireDefault(_whatIsAngular);
+	
+	var _whyAngular = __webpack_require__(19);
+	
+	var _whyAngular2 = _interopRequireDefault(_whyAngular);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _home = __webpack_require__(12);
 	
 	var _home2 = _interopRequireDefault(_home);
 	
@@ -35904,13 +36004,13 @@
 	};
 
 /***/ },
-/* 10 */
+/* 12 */
 /***/ function(module, exports) {
 
-	module.exports = "<h1> This is the Home Page, welcome {{name}} </h1>\n";
+	module.exports = "\n<div class=\"content\">\n    <h2 class=\"content-subhead\">Lets Learn About Angular</h2>\n    <p>\n        This single page app is designed to give you a better understanding of the aswesome framework AngularJS. I will give a brief introduction about myself and then we will dive right in to what Angular is all about and even go over the future of Angular which is Angular 2.\n    </p>\n\n    <h2 class=\"content-subhead\">Following Along</h2>\n    <p>\n      If you are looking for a specific feature of AngularJS you can simply click on the Hamburger icon in the top left and go exactly to where you want to go, otherwise you can go step by step by simply clicking on the arrows up above. Alright lets get started by clicking the first arrow up above to the About Me page...\n    </p>\n\n    <div class=\"pure-g\">\n        <div class=\"pure-u-1-3\">\n            <img class=\"pure-img-responsive\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/640px-AngularJS_logo.svg.png\" alt=\"AngularJS by Google\">\n        </div>\n        <div class=\"pure-u-1-3\">\n            <img class=\"pure-img-responsive\" src=\"https://scontent.fsnc1-1.fna.fbcdn.net/v/t1.0-9/13260045_10154206844004913_1833125193431266860_n.jpg?oh=f4b4ad2b74292bad589fdf8897377b41&oe=57C95D2E\" alt=\"Atom Pic\">\n        </div>\n        <div class=\"pure-u-1-3\">\n            <img class=\"pure-img-responsive\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/MVC-Process.svg/2000px-MVC-Process.svg.png\" alt=\"MVC\">\n        </div>\n\n    </div>\n\n  </div>\n";
 
 /***/ },
-/* 11 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35919,7 +36019,138 @@
 	  value: true
 	});
 	
-	var _homeCtrl = __webpack_require__(12);
+	var _aboutMe = __webpack_require__(14);
+	
+	var _aboutMe2 = _interopRequireDefault(_aboutMe);
+	
+	var _aboutMe3 = __webpack_require__(15);
+	
+	var _aboutMe4 = _interopRequireDefault(_aboutMe3);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  url: '/about-me',
+	  template: _aboutMe2.default,
+	  controller: ['$scope', function ($scope) {
+	    $scope.styles = _aboutMe4.default;
+	    $scope.initialImage = 'https://scontent.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/11181200_10154074971869913_8198207843358396468_n.jpg?oh=7be0d41e091f5a3ef859074b47068450&oe=5783471E';
+	    //'https://scontent.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10993406_10153122858064913_4616204215396259203_n.jpg?oh=285c2df4bb62b56335cff0d469f29e7f&oe=5789D7D2';
+	    $scope.transitionImage = 'https://scontent.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/12705633_10154050307074913_3251968113614216408_n.jpg?oh=dbbcdb483a34674e1b9034aca984dc8b&oe=5796947D';
+	  }]
+	};
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class='container center'>\n\n  <div id='backgroundImage'>\n    <img class='main-page-img fade-away' ng-src={{initialImage}} alt='Basketball pic should go here' />\n  </div>\n\n  <ul id='about-me'>\n    <li> Graduated from Code Fellow’s 18 ­week Full ­Stack JavaScript Development boot camp.</li>\n    <li> Before Code Fellows I played professional basketball in Portugal for a year. </li>\n    <li> Graduated at Northern Arizona University (NAU) with a degree in Electrical Engineering. </li>\n    <li> During my college experience, I played three years of Division I basketball. </li> \n    <li> Twitter:  <a class='text-link' href='https://twitter.com/max_jacobsen33' target=\"_blank\"> @max_jacobsen33 </a> </li>\n    <li> Linkedin:  <a class='text-link' href='https://www.linkedin.com/in/maxjacobsen33' target=\"_blank\"> Max Jacobsen</a> </li>\n  </ul>\n\n</div>\n";
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(16);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/sass-loader/index.js!./about-me.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/sass-loader/index.js!./about-me.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(6)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".container {\n  margin-top: 20px;\n  max-width: 100%;\n  width: 1800px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-wrap: wrap; }\n\n.main-page-img {\n  width: 280px;\n  height: 350px;\n  max-width: 100%;\n  border-radius: 10%;\n  background-color: black;\n  color: white; }\n\n#backgroundImage {\n  width: 280px;\n  height: 350px;\n  max-width: 100%;\n  border-radius: 10%;\n  background-image: url(\"https://scontent.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/12705633_10154050307074913_3251968113614216408_n.jpg?oh=dbbcdb483a34674e1b9034aca984dc8b&oe=5796947D\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center center;\n  color: white; }\n\n#about-me {\n  list-style: none;\n  display: block;\n  padding: 20px;\n  margin-left: 50px; }\n  #about-me li {\n    padding-top: 20px; }\n\n.fade-away {\n  -webkit-animation: fadeAway 2s 2s 1 linear forwards;\n  /* Safari 4+ */\n  -moz-animation: fadeAway 2s 2s 1 linear forwards;\n  /* Fx 5+ */\n  -o-animation: fadeAway 2s 2s 1 linear forwards;\n  /* Opera 12+ */\n  animation: fadeAway 2s 2s 1 linear forwards;\n  /* IE 10+, Fx 29+ */ }\n\n@-webkit-keyframes fadeAway {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n@-moz-keyframes fadeAway {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n@-o-keyframes fadeAway {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n@keyframes fadeAway {\n  from {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _whatIsAngular = __webpack_require__(18);
+	
+	var _whatIsAngular2 = _interopRequireDefault(_whatIsAngular);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  url: '/what-is-angular',
+	  template: _whatIsAngular2.default
+	};
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"content\">\n    <h2 class=\"content-subhead\">What Is AngularJS</h2>\n    <p>\n      In simple terms, it is a web application framework that follows the MVC design patter. For those of you who don't know MVC stands for Model-View-Controller. AngularJS is a 100% JavaScript and is compatible with both your desktop and mobile browsers. Developed by Google in 2009.\n    </p>\n    <ul>\n      <li> Model: Responsible for maintaining the application data, a model in AngularJS can be a range of data types in JavaScript such as a string, number, boolean, or just a plain javascript object. ($scope)</li>\n      <li> View: Is pretty self explanatory, it is what the user sees. AngularJS uses HTML as its templating language and even allows you to create your own elements by using directives. </li>\n      <li> Controller: It is where all the magic happens, it is the place where we put our applications logic. Our model lives within our controllers in AngularJS. The controller is what controls the Model and the View based on the User interactions. </li>\n    </ul>\n\n    <h2 class=\"content-subhead\">Framework Vs. Library</h2>\n    <ul> <strong>Framework </strong>\n      <li> Controls your application </li>\n      <li> Normally calls on your code to perform certain tasks based on the code that you have written. </li>\n      <li> Gives your code structure </li>\n      <li> You are not in charge but rather plug in your code </li>\n      <li> Can sometimes encapsulate useful libraries </li>\n      <li> Examples: ReactJS, Ember, Backbone and AngularJS </li>\n    </ul>\n    <ul> <strong>Library</strong>\n      <li> Packages of code where your application's code calls on the packages to perform certain tasks. </li>\n      <li> Acts as a toolkit </li>\n      <li> You are in charge </li>\n      <li> jQuery is a very popular library that works a lot with DOM manipulation </li>\n    </ul>\n\n\n</div>\n";
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _whyAngular = __webpack_require__(20);
+	
+	var _whyAngular2 = _interopRequireDefault(_whyAngular);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  url: '/why-angular',
+	  template: _whyAngular2.default
+	};
+
+/***/ },
+/* 20 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"content\">\n    <h2 class=\"content-subhead\">Why Choose AngularJS?</h2>\n    <ul>\n      <li> Reusability: the ability to create custom components through directives such as a main-nav or a login-form allows you to reuse these throughout your projects</li>\n      <li> Already embraces things that we already know such as HTML, CSS and JavaScript </li>\n      <li> Two-way data binding along with a lot of built in directives that solve issues we have been banging our head over using jQuery. </li>\n      <li> Simple dependency injection allowing the user to use other directives, services, and factories such as a router provider or animation services. </li>\n      <li> Built with testability in mind such as E2E and unit testing </li>\n      <li> Great for building small Single Page Apps </li>\n      <li> Easy to learn </li>\n      <li> Job opportunities won't disapear once Angular 2 comes out. A lot of companies are currently using version 1 and we still don't know when Angular 2 is even going to be released. </li>\n      <li> Check out all these web applications that are using Angular 1 <a href='https://www.madewithangular.com/#/' target=\"_blank\"> Made With Angular </a>\n    </ul>\n\n    <h2 class=\"content-subhead\">What you should not use Angular for</h2>\n    <ul>\n      <li> Building large web applications</li>\n      <li> If you think you have to know it in order to learn Angular 2 although it can't hurt</li>\n      <li> Gaming Applications</li>\n    </ul>\n</div>\n";
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _homeCtrl = __webpack_require__(22);
 	
 	var _homeCtrl2 = _interopRequireDefault(_homeCtrl);
 	
@@ -35932,7 +36163,7 @@
 	exports.default = stateCtrls.name;
 
 /***/ },
-/* 12 */
+/* 22 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -35946,6 +36177,144 @@
 	    $scope.name = 'max';
 	  }]);
 	};
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _mainHeader = __webpack_require__(24);
+	
+	var _mainHeader2 = _interopRequireDefault(_mainHeader);
+	
+	var _mainNav = __webpack_require__(28);
+	
+	var _mainNav2 = _interopRequireDefault(_mainNav);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var directives = angular.module('directives', []);
+	
+	(0, _mainHeader2.default)(directives);
+	(0, _mainNav2.default)(directives);
+	
+	exports.default = directives.name;
+
+/***/ },
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	exports.default = function (ngModule) {
+		ngModule.directive('mainHeader', function () {
+			return {
+				replace: true,
+				restrict: 'E',
+				template: _mainHeader2.default,
+				controller: ['$rootScope', '$scope', function ($rootScope, $scope) {
+					$scope.styles = _mainHeader4.default;
+				}]
+			};
+		});
+	};
+	
+	var _mainHeader = __webpack_require__(25);
+	
+	var _mainHeader2 = _interopRequireDefault(_mainHeader);
+	
+	var _mainHeader3 = __webpack_require__(26);
+	
+	var _mainHeader4 = _interopRequireDefault(_mainHeader3);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 25 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"header\">\n    <h1>Angling For Angular</h1>\n    <h2>By Max Jacobsen</h2>\n    <ul class='center selector'>\n      <li class='goBack' ng-click='root.goBack()' ng-hide='root.noPrevious'> <i class=\"fa fa-arrow-circle-left\" aria-hidden=\"true\"></i> {{root.nav.previous}} </li>\n      <li> {{root.nav.current}} </li>\n      <li ng-click='root.goForward()' ng-hide='root.noNext' class='goForward'> {{root.nav.next}} <i class=\"fa fa-arrow-circle-right\" aria-hidden=\"true\"></i> </li>\n    </ul>\n</div>\n";
+
+/***/ },
+/* 26 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(27);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/sass-loader/index.js!./main-header.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/postcss-loader/index.js!./../../../node_modules/sass-loader/index.js!./main-header.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(6)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".center {\n  margin: 0 auto;\n  text-align: center; }\n\n.selector {\n  list-style: none; }\n\n.selector li {\n  display: inline-block;\n  padding: 5px; }\n\n.goForward {\n  cursor: pointer;\n  padding-right: 2px;\n  border-left: 1px solid black; }\n  .goForward:hover {\n    color: blue; }\n\n.goBack {\n  cursor: pointer;\n  border-right: 1px solid black;\n  padding-left: 2px; }\n  .goBack:hover {\n    color: blue; }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	exports.default = function (ngModule) {
+		ngModule.directive('mainNav', function () {
+			return {
+				replace: true,
+				restrict: 'E',
+				template: _mainNav2.default
+			};
+		});
+	};
+	
+	var _mainNav = __webpack_require__(29);
+	
+	var _mainNav2 = _interopRequireDefault(_mainNav);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 29 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div id=\"menu\">\n    <div class=\"pure-menu\">\n        <a class=\"pure-menu-heading\" href=\"#\">AfA</a>\n\n        <ul class=\"pure-menu-list\">\n            <li class=\"pure-menu-item\"><a ui-sref=\"home\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"home\"}'>Home</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"about-me\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"about-me\"}'>About Me</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"what-is-angular\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"what-is-angular\"}'>AngularJS?</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"why-angular\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"why-angular\"}'>Why Angular?</a></li>\n        </ul>\n    </div>\n</div>\n";
 
 /***/ }
 /******/ ]);
