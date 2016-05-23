@@ -10,8 +10,12 @@ import './purecss/side-menu.css';
 /* STYLES */
 import './styles/main.scss';
 
+/* highlight.js */
+import './styles/tomorrow-night-bright.css';
+import hljs from 'highlight.js';
+hljs.initHighlightingOnLoad();
 
-
+import 'angular-highlightjs';
 
 /* UI-Router State Provider Config */
 import configStateProvider from './state-provider';
@@ -23,6 +27,7 @@ import stateCtrls from './state-provider/state-controllers';
 import directives from './directives';
 
 const app = angular.module('myApp', [
+  'hljs',
   stateRouter,
   stateCtrls,
   directives
