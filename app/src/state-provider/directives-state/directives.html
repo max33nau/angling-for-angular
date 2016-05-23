@@ -1,5 +1,14 @@
-<div class="content">
+<div class='content'>
     <h2 class="content-subhead">Directives</h2>
+    <div> Angular Built In Directives:
+       <select ng-model='directive.category'>
+         <option ng-repeat='category in directive.categories' value='{{category}}'>{{category}}</option>
+      </select>
+    </div>
+
+</div>
+
+<div class="content" ng-show='directive.category == directive.categories[0]'>
     <p>
       What is a Directive? They are markers on a DOM element that tell Angular's HTML
       compiler ($compiler) to attach a specific behaviour to that DOM element. We can
@@ -12,4 +21,34 @@
       <li> Comments: {{directive.comments}} </li>
       <li> Classes: {{directive.class}} </li>
     </ul>
+</div>
+
+<div ng-show='directive.category == directive.categories[1]'>
+  <div class='content'>
+      <h2 class="content-subhead">{{directive.categories[1]}}</h2>
+  </div>
+</div>
+
+<div ng-show='directive.category == directive.categories[2]'>
+  <div class='content'>
+      <h2 class="content-subhead">{{directive.categories[2]}}</h2>
+  </div>
+</div>
+
+<div ng-show='directive.category == directive.categories[3]'>
+  <div class='content'>
+      <h2 class="content-subhead">{{directive.categories[3]}}</h2>
+  </div>
+</div>
+
+<div ng-show='directive.category == directive.categories[4]'>
+  <div class='content'>
+      <h2 class="content-subhead">{{directive.categories[4]}}</h2>
+  </div>
+</div>
+
+<div ng-show='directive.category == directive.categories[5]'>
+  <div class='content'>
+      <h2 class="content-subhead">{{directive.categories[5]}}</h2>
+  </div>
 </div>
