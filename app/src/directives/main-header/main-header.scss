@@ -1,0 +1,31 @@
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.selector {
+  list-style: none
+}
+
+.selector li {
+  display: inline-block;
+  padding: 5px;
+}
+
+.goForward {
+  cursor: pointer;
+  padding-right: 2px;
+  border-left: 1px solid black;
+  &:hover {
+    color: blue;
+  }
+}
+
+.goBack {
+  cursor: pointer;
+  border-right: 1px solid black;
+  padding-left: 2px;
+  &:hover {
+    color: blue;
+  }
+}

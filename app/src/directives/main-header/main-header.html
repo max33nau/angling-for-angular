@@ -1,0 +1,9 @@
+<div class="header">
+    <h1>Angling For Angular</h1>
+    <h2>By Max Jacobsen</h2>
+    <ul class='center selector'>
+      <li class='goBack' ng-click='root.goBack()' ng-hide='root.noPrevious'> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> {{root.nav.previous}} </li>
+      <li> {{root.nav.current}} </li>
+      <li ng-click='root.goForward()' ng-hide='root.noNext' class='goForward'> {{root.nav.next}} <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </li>
+    </ul>
+</div>
