@@ -1,0 +1,15 @@
+<div class="content">
+    <h2 class="content-subhead">Directives</h2>
+    <p>
+      What is a Directive? They are markers on a DOM element that tell Angular's HTML
+      compiler ($compiler) to attach a specific behaviour to that DOM element. We can
+      match directives based on:
+    </p>
+    <ul>
+      <li> Element Names: {{directive.element}}, we can create our own custom directives that we can use just like
+      HTML tags. The most important thing to remember is that when we are naming our directive in our angular.module, we name it as camelCase to differ it from HTML elements and then Angular's compile converts the camelCase to a dash format. For example, app.directive('myOwnDirective', function() {}) will be compiled to the DOM as {{directive.custom}}. </li>
+      <li> Attributes:{{directive.attribute}}, AngularJS comes with a lot of built in directives already available to you such as ng-show, ng-hide, ng-repeat, ng-click etc. You can see these in action below. </li>
+      <li> Comments: {{directive.comments}} </li>
+      <li> Classes: {{directive.class}} </li>
+    </ul>
+</div>
