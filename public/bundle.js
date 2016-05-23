@@ -64,11 +64,11 @@
 	
 	var _stateProvider2 = _interopRequireDefault(_stateProvider);
 	
-	var _stateControllers = __webpack_require__(21);
+	var _stateControllers = __webpack_require__(23);
 	
 	var _stateControllers2 = _interopRequireDefault(_stateControllers);
 	
-	var _directives = __webpack_require__(23);
+	var _directives = __webpack_require__(25);
 	
 	var _directives2 = _interopRequireDefault(_directives);
 	
@@ -97,8 +97,8 @@
 	}]).run(function ($rootScope, $state) {
 	  $rootScope.root = {};
 	  $rootScope.root.nav = {};
-	  $rootScope.root.states = ['', 'home', 'about-me', 'what-is-angular', 'why-angular', ''];
-	  $rootScope.root.headerNames = ['', 'Home', 'About Me', 'So What Is AngularJS?', 'Why Choose Angular?', ''];
+	  $rootScope.root.states = ['', 'home', 'about-me', 'what-is-angular', 'why-angular', 'getting-started', ''];
+	  $rootScope.root.headerNames = ['', 'Home', 'About Me', 'So What Is AngularJS?', 'Why Choose Angular?', 'Lets Get Started', ''];
 	  $rootScope.root.nav.previous = $rootScope.root.states[0];
 	  $rootScope.root.nav.current = $rootScope.root.states[1];
 	  $rootScope.root.nav.next = $rootScope.root.states[2];
@@ -35944,7 +35944,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".currentLink {\n  color: white !important; }\n\n.padding-5 {\n  padding: 5px !important; }\n", ""]);
+	exports.push([module.id, ".currentLink {\n  color: white !important; }\n\n.containsCode {\n  display: flex;\n  width: 100%;\n  justify-content: center;\n  flex-wrap: wrap;\n  align-items: flex-start; }\n\n.codeNav {\n  list-style: none;\n  background-color: black;\n  color: red;\n  padding: 5px;\n  cursor: pointer;\n  border: 1px solid red;\n  text-align: center; }\n  .codeNav li {\n    display: inline-block;\n    padding: 0 20px;\n    margin: 0 10px; }\n    .codeNav li:hover {\n      background-color: green; }\n\n.preCode {\n  margin-top: -10px; }\n\n.renderedPage {\n  max-width: 100%;\n  background-color: #fff;\n  border: 2px solid black;\n  padding: 10px;\n  color: black;\n  margin: 20px;\n  width: 500px;\n  height: 600px; }\n\n.actualCode {\n  height: 640px; }\n", ""]);
 	
 	// exports
 
@@ -35960,7 +35960,7 @@
 	});
 	
 	exports.default = function ($stateProvider) {
-	  $stateProvider.state('home', _home2.default).state('about-me', _aboutMe2.default).state('what-is-angular', _whatIsAngular2.default).state('why-angular', _whyAngular2.default);
+	  $stateProvider.state('home', _home2.default).state('about-me', _aboutMe2.default).state('what-is-angular', _whatIsAngular2.default).state('why-angular', _whyAngular2.default).state('getting-started', _gettingStarted2.default);
 	};
 	
 	var _home = __webpack_require__(11);
@@ -35978,6 +35978,10 @@
 	var _whyAngular = __webpack_require__(19);
 	
 	var _whyAngular2 = _interopRequireDefault(_whyAngular);
+	
+	var _gettingStarted = __webpack_require__(21);
+	
+	var _gettingStarted2 = _interopRequireDefault(_gettingStarted);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36044,7 +36048,7 @@
 /* 14 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class='container center'>\n\n  <div id='backgroundImage'>\n    <img class='main-page-img fade-away' ng-src={{initialImage}} alt='Basketball pic should go here' />\n  </div>\n\n  <ul id='about-me'>\n    <li> Graduated from Code Fellow’s 18 ­week Full ­Stack JavaScript Development boot camp.</li>\n    <li> Before Code Fellows I played professional basketball in Portugal for a year. </li>\n    <li> Graduated at Northern Arizona University (NAU) with a degree in Electrical Engineering. </li>\n    <li> During my college experience, I played three years of Division I basketball. </li> \n    <li> Twitter:  <a class='text-link' href='https://twitter.com/max_jacobsen33' target=\"_blank\"> @max_jacobsen33 </a> </li>\n    <li> Linkedin:  <a class='text-link' href='https://www.linkedin.com/in/maxjacobsen33' target=\"_blank\"> Max Jacobsen</a> </li>\n  </ul>\n\n</div>\n";
+	module.exports = "<div class='container center'>\n\n  <div id='backgroundImage'>\n    <img class='main-page-img fade-away' ng-src={{initialImage}} alt='Basketball pic should go here' />\n  </div>\n\n  <ul id='about-me'>\n    <li> Graduated from Code Fellow’s 18 ­week Full ­Stack JavaScript Development boot camp.</li>\n    <li> Before Code Fellows I played professional basketball in Portugal for a year. </li>\n    <li> Graduated at Northern Arizona University (NAU) with a degree in Electrical Engineering. </li>\n    <li> During my college experience, I played three years of Division I basketball. </li>\n    <li> Twitter:  <a class='text-link' href='https://twitter.com/max_jacobsen33' target=\"_blank\"> @max_jacobsen33 </a> </li>\n    <li> Linkedin:  <a class='text-link' href='https://www.linkedin.com/in/maxjacobsen33' target=\"_blank\"> Max Jacobsen</a> </li>\n  </ul>\n\n</div>\n";
 
 /***/ },
 /* 15 */
@@ -36150,7 +36154,40 @@
 	  value: true
 	});
 	
-	var _homeCtrl = __webpack_require__(22);
+	var _gettingStarted = __webpack_require__(22);
+	
+	var _gettingStarted2 = _interopRequireDefault(_gettingStarted);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  url: '/getting-started',
+	  template: _gettingStarted2.default,
+	  controller: ['$scope', function ($scope) {
+	    $scope.showHTML = true;
+	    $scope.html = '<!DOCTYPE html>\n    <html lang="en">\n      <head>\n        <title> Angular Tutorial </title>\n        <meta charset="utf-8"></meta>\n        <script src="angular.min.js" type="text/javascript"></script>\n        <script src="app.js" type="text/javascript"></script>\n      </head>\n      <body>\n        <p> HELLO WORLD </p>\n      </body>\n    </html>';
+	    $scope.javascript = '// Angular App Will GO HERE ';
+	    $scope.description = '/*If you did not do a git clone on my repo then go to\n    angularJS website: https://angularjs.org\n    and then click the download angular 1 button\n    and download the most stable angularJS in minified form\n    and then add it to your directory along with the\n    index.html content and a app.js file*/\n\n    /* You should now be able to run your application in\n    the browser and you should see a HELLO WORLD in paragraph\n    form. If you see this, then you are ready to get started. */';
+	  }]
+	};
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"content\">\n  <h2 class=\"content-subhead\">Getting Started</h2>\n  <p> You can follow along with the tutorial which will give you some user interaction or you can run a git clone on the actual tutorial by copying: 'git clone https://github.com/max33nau/angularJS-tutorial.git' and pasting that in your terminal and then enter: 'cd angularJS-tutorial'</p>\n  <p> You can also go to the actual repo by clicking <a href='https://github.com/max33nau/angularJS-tutorial.git' target='_blank'> here </a> </p>\n</div>\n  <div class=\"containsCode\">\n\n    <div class='renderedPage pure-u-1-2'>\n      <p> HELLO WORLD </p>\n    </div>\n\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _homeCtrl = __webpack_require__(24);
 	
 	var _homeCtrl2 = _interopRequireDefault(_homeCtrl);
 	
@@ -36163,7 +36200,7 @@
 	exports.default = stateCtrls.name;
 
 /***/ },
-/* 22 */
+/* 24 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -36179,7 +36216,7 @@
 	};
 
 /***/ },
-/* 23 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36188,11 +36225,11 @@
 	  value: true
 	});
 	
-	var _mainHeader = __webpack_require__(24);
+	var _mainHeader = __webpack_require__(26);
 	
 	var _mainHeader2 = _interopRequireDefault(_mainHeader);
 	
-	var _mainNav = __webpack_require__(28);
+	var _mainNav = __webpack_require__(30);
 	
 	var _mainNav2 = _interopRequireDefault(_mainNav);
 	
@@ -36206,7 +36243,7 @@
 	exports.default = directives.name;
 
 /***/ },
-/* 24 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36228,30 +36265,30 @@
 		});
 	};
 	
-	var _mainHeader = __webpack_require__(25);
+	var _mainHeader = __webpack_require__(27);
 	
 	var _mainHeader2 = _interopRequireDefault(_mainHeader);
 	
-	var _mainHeader3 = __webpack_require__(26);
+	var _mainHeader3 = __webpack_require__(28);
 	
 	var _mainHeader4 = _interopRequireDefault(_mainHeader3);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 25 */
+/* 27 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"header\">\n    <h1>Angling For Angular</h1>\n    <h2>By Max Jacobsen</h2>\n    <ul class='center selector'>\n      <li class='goBack' ng-click='root.goBack()' ng-hide='root.noPrevious'> <i class=\"fa fa-arrow-circle-left\" aria-hidden=\"true\"></i> {{root.nav.previous}} </li>\n      <li> {{root.nav.current}} </li>\n      <li ng-click='root.goForward()' ng-hide='root.noNext' class='goForward'> {{root.nav.next}} <i class=\"fa fa-arrow-circle-right\" aria-hidden=\"true\"></i> </li>\n    </ul>\n</div>\n";
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(27);
+	var content = __webpack_require__(29);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -36271,7 +36308,7 @@
 	}
 
 /***/ },
-/* 27 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -36285,7 +36322,7 @@
 
 
 /***/ },
-/* 28 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36304,17 +36341,17 @@
 		});
 	};
 	
-	var _mainNav = __webpack_require__(29);
+	var _mainNav = __webpack_require__(31);
 	
 	var _mainNav2 = _interopRequireDefault(_mainNav);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 29 */
+/* 31 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"menu\">\n    <div class=\"pure-menu\">\n        <a class=\"pure-menu-heading\" href=\"#\">AfA</a>\n\n        <ul class=\"pure-menu-list\">\n            <li class=\"pure-menu-item\"><a ui-sref=\"home\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"home\"}'>Home</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"about-me\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"about-me\"}'>About Me</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"what-is-angular\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"what-is-angular\"}'>AngularJS?</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"why-angular\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"why-angular\"}'>Why Angular?</a></li>\n        </ul>\n    </div>\n</div>\n";
+	module.exports = "\n<div id=\"menu\">\n    <div class=\"pure-menu\">\n        <a class=\"pure-menu-heading\" href=\"#\">AfA</a>\n\n        <ul class=\"pure-menu-list\">\n            <li class=\"pure-menu-item\"><a ui-sref=\"home\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"home\"}'>Home</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"about-me\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"about-me\"}'>About Me</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"what-is-angular\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"what-is-angular\"}'>AngularJS?</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"why-angular\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"why-angular\"}'>Why Angular?</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"getting-started\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"getting-started\"}'>Getting Started</a></li>\n        </ul>\n    </div>\n</div>\n";
 
 /***/ }
 /******/ ]);
