@@ -1,0 +1,42 @@
+<div class="content">
+  <h2 class="content-subhead">Initializing our App and our first Data Binding Expression</h2>
+  <p> If you are following along on the github clone, in your terminal run 'git checkout create-our-app'
+    and run the index.html in your browser
+  </p>
+  <p> Otherwise you can simply use the input field below which will act as if we were typing in new javascript ourself. </p>
+</div>
+  <div class="containsCode">
+
+    <div class='renderedPage pure-u-1-2'>
+      <h2> Hello {{name}} </h2>
+    </div>
+
+    <div class='actualCode'>
+      <ul class='codeNav'>
+        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>
+        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>
+        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>
+      </ul>
+      <div class='preCode' ng-show='showHTML'>
+        <pre><code class='html'>
+          {{html}}
+        </code></pre>
+      </div>
+
+      <div class='preCode' ng-show='showJavascript'>
+        <pre>
+          <code> {{javascript}} </code>
+        </pre>
+        $scope.name = <input type='text' ng-model='name'> </input>
+      </div>
+
+      <div class='preCode' ng-show='showDescription'>
+        <pre>
+          <code> {{description}} </code>
+        </pre>
+      </div>
+
+
+
+    </div>
+  </div>

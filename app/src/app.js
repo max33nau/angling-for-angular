@@ -40,8 +40,8 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlR
 .run( function($rootScope, $state) {
   $rootScope.root = {};
   $rootScope.root.nav = {};
-  $rootScope.root.states = ['','home','about-me','what-is-angular','why-angular','getting-started',''];
-  $rootScope.root.headerNames = ['', 'Home', 'About Me', 'So What Is AngularJS?','Why Choose Angular?','Lets Get Started',''];
+  $rootScope.root.states = ['','home','about-me','what-is-angular','why-angular','getting-started', 'creating-our-first-app',''];
+  $rootScope.root.headerNames = ['', 'Home', 'About Me', 'So What Is AngularJS?','Why Choose Angular?','Lets Get Started','Creating Our First App',''];
   $rootScope.root.nav.previous = $rootScope.root.states[0];
   $rootScope.root.nav.current = $rootScope.root.states[1];
   $rootScope.root.nav.next = $rootScope.root.states[2];
