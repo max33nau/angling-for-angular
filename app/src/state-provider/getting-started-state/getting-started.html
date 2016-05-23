@@ -1,0 +1,36 @@
+<div class="content">
+  <h2 class="content-subhead">Getting Started</h2>
+  <p> You can follow along with the tutorial which will give you some user interaction or you can run a git clone on the actual tutorial by copying: 'git clone https://github.com/max33nau/angularJS-tutorial.git' and pasting that in your terminal and then enter: 'cd angularJS-tutorial'</p>
+  <p> You can also go to the actual repo by clicking <a href='https://github.com/max33nau/angularJS-tutorial.git' target='_blank'> here </a> </p>
+</div>
+  <div class="containsCode">
+
+    <div class='renderedPage pure-u-1-2'>
+      <p> HELLO WORLD </p>
+    </div>
+
+    <div class='actualCode'>
+      <ul class='codeNav'>
+        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>
+        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>
+        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>
+      </ul>
+      <div class='preCode' ng-show='showHTML'>
+        <pre><code class='html'>
+          {{html}}
+        </code></pre>
+      </div>
+
+      <div class='preCode' ng-show='showJavascript'>
+        <pre>
+          <code> {{javascript}} </code>
+        </pre>
+      </div>
+
+      <div class='preCode' ng-show='showDescription'>
+        <pre>
+          <code> {{description}} </code>
+        </pre>
+      </div>
+    </div>
+  </div>

@@ -20,7 +20,7 @@ module.exports = {
     preLoaders: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /highlight.pack.js/],
         loader: 'jshint-loader'
       }
     ],
