@@ -1,0 +1,61 @@
+.container {
+  margin-top: 20px;
+  max-width: 100%;
+  width: 1800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.main-page-img {
+  width: 280px;
+  height: 350px;
+  max-width: 100%;
+  border-radius: 10%;
+  background-color: black;
+  color: white;
+}
+
+#backgroundImage {
+  width: 280px;
+  height: 350px;
+  max-width: 100%;
+  border-radius: 10%;
+  background-image: url('https://scontent.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/12705633_10154050307074913_3251968113614216408_n.jpg?oh=dbbcdb483a34674e1b9034aca984dc8b&oe=5796947D');
+  background-repeat:no-repeat;
+  background-size:     cover;
+  background-position:center center;
+  color: white;
+}
+
+#about-me {
+  list-style: none;
+  display: block;
+  padding: 20px;
+  margin-left: 50px;
+  li {
+    padding-top: 20px;
+  }
+}
+
+// Fade a image away
+.fade-away {
+  -webkit-animation: fadeAway 2s 2s 1 linear forwards; /* Safari 4+ */
+  -moz-animation:    fadeAway 2s 2s 1 linear forwards; /* Fx 5+ */
+  -o-animation:      fadeAway 2s 2s 1 linear forwards; /* Opera 12+ */
+  animation:         fadeAway 2s 2s 1 linear forwards; /* IE 10+, Fx 29+ */
+}
+
+@-webkit-keyframes fadeAway {
+  from {opacity: 1;} to {opacity: 0;}
+}
+@-moz-keyframes fadeAway {
+  from {opacity: 1;} to {opacity: 0;}
+}
+@-o-keyframes fadeAway {
+  from {opacity: 1;} to {opacity: 0;}
+}
+@keyframes fadeAway {
+  from {opacity: 1;} to {opacity: 0;}
+}
