@@ -1,6 +1,29 @@
 <div class="containsCode">
     <div class='renderedPage pure-u-1-2'>
-      <h2> Hello {{name}} </h2>
+      <h2> 2-way Data Binding </h2>
+      <div ng-controller='bindingExampleCtrl'>
+        Control the text below: <input ng-model='binding.name'>
+        <p> {{binding.name}} </p>
+      </div>
+      <h2> Example of Prototypical Inheritance (bad practice) </h2>
+      <div ng-controller='badExampleParentCtrl'>
+        <strong> Parent Ctrl </strong> <input ng-model='name' >
+        <p> {{name}} </p>
+        <div ng-controller='badExampleChildCtrl'>
+          <strong> Child Ctrl:</strong> <input ng-model='name'>
+          <p>  {{name}} </p>
+        </div>
+      </div>
+      <h2> Example of properly using ng-model with '.' <br>
+        to avoid weird child prototypical inheritance </h2>
+      <div ng-controller='goodExampleParentCtrl'>
+        <strong> Parent Ctrl </strong> <input ng-model='parent.name'>
+        <p>{{parent.name}} </p>
+        <div ng-controller='goodExampleChildCtrl'>
+          <strong> Child Ctrl:</strong>  <input ng-model='child.name'>
+          <p> {{child.name}} </p>
+        </div>
+      </div>
     </div>
     <div class='actualCode'>
       <ul class='codeNav'>
@@ -18,7 +41,6 @@
         <pre>
           <code> {{javascript}} </code>
         </pre>
-        $scope.name = <input type='text' ng-model='name'> </input>
       </div>
 
       <div class='preCode' ng-show='showDescription'>

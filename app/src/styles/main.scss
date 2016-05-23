@@ -32,8 +32,6 @@
   }
 }
 
-
-
 .renderedPage {
   max-width: 100%;
   background-color: #fff;
@@ -42,5 +40,5 @@
   color: black;
   margin: 20px;
   width: 500px;
-  height: 600px;
+  word-wrap: break-word;
 }

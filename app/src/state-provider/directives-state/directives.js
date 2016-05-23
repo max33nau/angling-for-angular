@@ -12,7 +12,7 @@ export default {
     $scope.directive.comments = '<!-- directive: my-dir exp -->';
     $scope.directive.class = '<span class="my-dir: exp;"></span>';
     $scope.directive.categories = ['<--- Select A Directive --->', 'ng-model', 'ng-repeat', 'ng-show/ng-hide',
-    'ng-class', 'ng-click'];
+    'ng-class', 'ng-click','Custom Directive'];
     $scope.directive.category = $scope.directive.categories[0];
   }]
 };

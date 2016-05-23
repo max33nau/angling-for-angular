@@ -26,11 +26,17 @@ import stateCtrls from './state-provider/state-controllers';
 /* Directives */
 import directives from './directives';
 
+/*Controllers */
+import controllers from './controllers';
+
+
+
 const app = angular.module('myApp', [
   'hljs',
   stateRouter,
   stateCtrls,
-  directives
+  directives,
+  controllers
 ]);
 
 app.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlRouterProvider) {
