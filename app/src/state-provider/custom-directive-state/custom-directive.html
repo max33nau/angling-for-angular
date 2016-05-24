@@ -1,0 +1,55 @@
+<div class="content">
+  <h2 class="content-subhead">Custom Directives </h2>
+  <p>Used by AngularJS to extend the functionality of HTML. We can define these using the
+  directive function: app.directive('myCustomDirective', function(){
+    return {
+      customization of directive content goes here.
+    }
+  }) If this doesn't make sense we will show a example of how this all works below. We will be making a custom directive in the form of a element.</p>
+  <ul> Type of Custom Directives (activate when their matching directive is encountered):
+    <li> Elements - {{elementExample}} </li>
+    <li> Attribute - {{attributeExample}} </li>
+    <li> CSS - {{classExample}} </li>
+    <li> Comment - {{commentExample}} </li>
+  </ul>
+</div>
+  <div class="containsCode">
+
+    <div class='renderedPage pure-u-1-2'>
+      Simple Example Of Custom Directive:
+      <a-target-blank my-link-name='Linkedin' my-url='https://www.linkedin.com/in/maxjacobsen33'> </a-target-blank>
+      <br>
+      <p>I can use my directive with a ng-repeat now to show a
+      better use of a-target-blank. Lets say if I want to link all
+      the projects I have done. </p>
+      <ul ng-repeat='project in my.projects'>
+        <li> <a-target-blank my-link-name={{project.name}} my-url={{project.url}}>
+        </a-target-blank> </li>
+      </ul>
+    </div>
+
+    <div class='actualCode'>
+      <ul class='codeNav'>
+        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>
+        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>
+        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>
+      </ul>
+      <div class='preCode' ng-show='showHTML'>
+        <pre><code class='html'>
+          {{html}}
+        </code></pre>
+      </div>
+
+      <div class='preCode' ng-show='showJavascript'>
+        <pre>
+          <code> {{javascript}} </code>
+        </pre>
+      </div>
+
+      <div class='preCode' ng-show='showDescription'>
+        <pre>
+          <code> {{description}} </code>
+        </pre>
+      </div>
+    </div>
+  </div>

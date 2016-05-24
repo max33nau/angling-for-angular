@@ -6,6 +6,7 @@ import myNgClass from './my-ng-class/my-ng-class';
 import myNgClick from './my-ng-click/my-ng-click';
 import myNgHideAndShow from './my-ng-hide-and-show/my-ng-hide-and-show';
 import myCustomDirective from './my-custom-directive/my-custom-directive';
+import aTargetBlank from './a-target-blank/a-target-blank';
 
 const directives = angular.module( 'directives', [] );
 
@@ -17,6 +18,7 @@ myNgClass(directives);
 myNgClick(directives);
 myNgHideAndShow(directives);
 myCustomDirective(directives);
+aTargetBlank(directives);
 
 
 export default directives.name;
