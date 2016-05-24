@@ -6,6 +6,9 @@ import gettingStartedState from './getting-started-state/getting-started';
 import initialAppState from './initial-app-state/initial-app';
 import directiveState from './directives-state/directives';
 import customDirectiveState from './custom-directive-state/custom-directive';
+import soMuchAngularState from './so-much-angular-state/so-much-angular';
+import theFutureState from './the-future-state/the-future';
+import referencesState from './references-state/references';
 
 
 
@@ -18,5 +21,8 @@ export default function($stateProvider) {
     .state('getting-started', gettingStartedState)
     .state('creating-our-first-app', initialAppState)
     .state('directives', directiveState)
-    .state('custom-directive', customDirectiveState);
+    .state('custom-directive', customDirectiveState)
+    .state('so-much-angular', soMuchAngularState)
+    .state('the-future', theFutureState)
+    .state('references', referencesState);
 }
