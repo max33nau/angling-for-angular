@@ -1,6 +1,19 @@
 <div class="containsCode">
     <div class='renderedPage pure-u-1-2'>
-      <h2> Hello {{name}} </h2>
+      <div ng-controller='mainCtrl'>
+        <div ng-repeat='player in nba.players'>
+          <h5><a href={{player.url}} target='_blank'> {{player.name}} </a> </h5>
+          <ul>
+            <li> Born: {{player.born}} </li>
+            <li> Height: {{player.height.feet}}' {{player.height.inches}}" </li>
+            <li> Current Team: {{player.currentTeam}} </li>
+            <li> Championships:{{player.championships}}</li>
+            <li> NBA Finals MVP: {{player.nbaFinalsMVP}} </li>
+            <li> NBA MVP: {{player.mvp}} </li>
+            <li> NBA All Star Team: {{player.nbaAllstarTeam}} </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class='actualCode'>
       <ul class='codeNav'>

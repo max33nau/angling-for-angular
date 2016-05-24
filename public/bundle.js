@@ -72,13 +72,17 @@
 	
 	var _stateProvider2 = _interopRequireDefault(_stateProvider);
 	
-	var _stateControllers = __webpack_require__(185);
+	var _stateControllers = __webpack_require__(187);
 	
 	var _stateControllers2 = _interopRequireDefault(_stateControllers);
 	
-	var _directives = __webpack_require__(187);
+	var _directives = __webpack_require__(189);
 	
 	var _directives2 = _interopRequireDefault(_directives);
+	
+	var _controllers = __webpack_require__(208);
+	
+	var _controllers2 = _interopRequireDefault(_controllers);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -101,7 +105,10 @@
 	/* Directives */
 	
 	
-	var app = _angular2.default.module('myApp', ['hljs', _angularUiRouter2.default, _stateControllers2.default, _directives2.default]);
+	/*Controllers */
+	
+	
+	var app = _angular2.default.module('myApp', ['hljs', _angularUiRouter2.default, _stateControllers2.default, _directives2.default, _controllers2.default]);
 	
 	app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 	  $urlRouterProvider.otherwise('/');
@@ -109,8 +116,8 @@
 	}]).run(function ($rootScope, $state) {
 	  $rootScope.root = {};
 	  $rootScope.root.nav = {};
-	  $rootScope.root.states = ['', 'home', 'about-me', 'what-is-angular', 'why-angular', 'getting-started', 'creating-our-first-app', ''];
-	  $rootScope.root.headerNames = ['', 'Home', 'About Me', 'So What Is AngularJS?', 'Why Choose Angular?', 'Lets Get Started', 'Creating Our First App', ''];
+	  $rootScope.root.states = ['', 'home', 'about-me', 'what-is-angular', 'why-angular', 'getting-started', 'creating-our-first-app', 'directives', ''];
+	  $rootScope.root.headerNames = ['', 'Home', 'About Me', 'So What Is AngularJS?', 'Why Choose Angular?', 'Lets Get Started', 'Creating Our First App', 'Directives', ''];
 	  $rootScope.root.nav.previous = $rootScope.root.states[0];
 	  $rootScope.root.nav.current = $rootScope.root.states[1];
 	  $rootScope.root.nav.next = $rootScope.root.states[2];
@@ -35956,7 +35963,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".currentLink {\n  color: white !important; }\n\n.containsCode {\n  display: flex;\n  width: 100%;\n  justify-content: center;\n  flex-wrap: wrap;\n  align-items: flex-start; }\n\n.codeNav {\n  list-style: none;\n  background-color: black;\n  color: red;\n  padding: 5px;\n  cursor: pointer;\n  border: 1px solid red;\n  text-align: center; }\n  .codeNav li {\n    display: inline-block;\n    padding: 0 20px;\n    margin: 0 10px; }\n    .codeNav li:hover {\n      background-color: green; }\n\n.renderedPage {\n  max-width: 100%;\n  background-color: #fff;\n  border: 2px solid black;\n  padding: 10px;\n  color: black;\n  margin: 20px;\n  width: 500px;\n  height: 600px; }\n", ""]);
+	exports.push([module.id, ".currentLink {\n  color: white !important; }\n\n.containsCode {\n  display: flex;\n  width: 100%;\n  justify-content: center;\n  flex-wrap: wrap;\n  align-items: flex-start; }\n\n.codeNav {\n  list-style: none;\n  background-color: black;\n  color: red;\n  padding: 5px;\n  cursor: pointer;\n  border: 1px solid red;\n  text-align: center; }\n  .codeNav li {\n    display: inline-block;\n    padding: 0 20px;\n    margin: 0 10px; }\n    .codeNav li:hover {\n      background-color: green; }\n\n.renderedPage {\n  max-width: 100%;\n  background-color: #fff;\n  border: 2px solid black;\n  padding: 10px;\n  color: black;\n  margin: 20px;\n  width: 500px;\n  word-wrap: break-word; }\n", ""]);
 	
 	// exports
 
@@ -51728,7 +51735,7 @@
 	});
 	
 	exports.default = function ($stateProvider) {
-	  $stateProvider.state('home', _home2.default).state('about-me', _aboutMe2.default).state('what-is-angular', _whatIsAngular2.default).state('why-angular', _whyAngular2.default).state('getting-started', _gettingStarted2.default).state('creating-our-first-app', _initialApp2.default);
+	  $stateProvider.state('home', _home2.default).state('about-me', _aboutMe2.default).state('what-is-angular', _whatIsAngular2.default).state('why-angular', _whyAngular2.default).state('getting-started', _gettingStarted2.default).state('creating-our-first-app', _initialApp2.default).state('directives', _directives2.default);
 	};
 	
 	var _home = __webpack_require__(171);
@@ -51754,6 +51761,10 @@
 	var _initialApp = __webpack_require__(183);
 	
 	var _initialApp2 = _interopRequireDefault(_initialApp);
+	
+	var _directives = __webpack_require__(185);
+	
+	var _directives2 = _interopRequireDefault(_directives);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -51783,7 +51794,7 @@
 /* 172 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"content\">\n    <h2 class=\"content-subhead\">Lets Learn About Angular</h2>\n    <p>\n        This single page app is designed to give you a better understanding of the aswesome framework AngularJS. I will give a brief introduction about myself and then we will dive right in to what Angular is all about and even go over the future of Angular which is Angular 2.\n    </p>\n\n    <h2 class=\"content-subhead\">Following Along</h2>\n    <p>\n      If you are looking for a specific feature of AngularJS you can simply click on the Hamburger icon in the top left and go exactly to where you want to go, otherwise you can go step by step by simply clicking on the arrows up above. Alright lets get started by clicking the first arrow up above to the About Me page...\n    </p>\n\n    <div class=\"pure-g\">\n        <div class=\"pure-u-1-3\">\n            <img class=\"pure-img-responsive\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/640px-AngularJS_logo.svg.png\" alt=\"AngularJS by Google\">\n        </div>\n        <div class=\"pure-u-1-3\">\n            <img class=\"pure-img-responsive\" src=\"https://scontent.fsnc1-1.fna.fbcdn.net/v/t1.0-9/13260045_10154206844004913_1833125193431266860_n.jpg?oh=f4b4ad2b74292bad589fdf8897377b41&oe=57C95D2E\" alt=\"Atom Pic\">\n        </div>\n        <div class=\"pure-u-1-3\">\n            <img class=\"pure-img-responsive\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/MVC-Process.svg/2000px-MVC-Process.svg.png\" alt=\"MVC\">\n        </div>\n\n    </div>\n\n  </div>\n";
+	module.exports = "\n<div class=\"content\">\n    <h2 class=\"content-subhead\">Lets Learn About Angular</h2>\n    <p>\n        This single page app is designed to give you a better understanding of the awesome framework AngularJS. I will give a brief introduction about myself and then we will dive right in to what Angular is all about and even go over the future of Angular which is Angular 2.\n    </p>\n\n    <h2 class=\"content-subhead\">Following Along</h2>\n    <p>\n      If you are looking for a specific feature of AngularJS you can simply click on the Hamburger icon in the top left and go exactly to where you want to go, otherwise you can go step by step by simply clicking on the arrows up above. Alright lets get started by clicking the first arrow up above to the About Me page...\n    </p>\n\n    <div class=\"pure-g\">\n        <div class=\"pure-u-1-3\">\n            <img class=\"pure-img-responsive\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/640px-AngularJS_logo.svg.png\" alt=\"AngularJS by Google\">\n        </div>\n        <div class=\"pure-u-1-3\">\n            <img class=\"pure-img-responsive\" src=\"https://scontent.fsnc1-1.fna.fbcdn.net/v/t1.0-9/13260045_10154206844004913_1833125193431266860_n.jpg?oh=f4b4ad2b74292bad589fdf8897377b41&oe=57C95D2E\" alt=\"Atom Pic\">\n        </div>\n        <div class=\"pure-u-1-3\">\n            <img class=\"pure-img-responsive\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/MVC-Process.svg/2000px-MVC-Process.svg.png\" alt=\"MVC\">\n        </div>\n\n    </div>\n\n  </div>\n";
 
 /***/ },
 /* 173 */
@@ -51995,7 +52006,44 @@
 	  value: true
 	});
 	
-	var _homeCtrl = __webpack_require__(186);
+	var _directives = __webpack_require__(186);
+	
+	var _directives2 = _interopRequireDefault(_directives);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  url: '/directives',
+	  template: _directives2.default,
+	  controller: ['$scope', function ($scope) {
+	    $scope.directive = {};
+	    $scope.directive.element = '<my-dir> </my-dir>';
+	    $scope.directive.custom = '<my-own-directive> </my-own-directive>';
+	    $scope.directive.attribute = '<div ng-show="expression"> </div>';
+	    $scope.directive.comments = '<!-- directive: my-dir exp -->';
+	    $scope.directive.class = '<span class="my-dir: exp;"></span>';
+	    $scope.directive.categories = ['<--- Select A Directive --->', 'ng-model', 'ng-repeat', 'ng-show/ng-hide', 'ng-class', 'ng-click', 'Custom Directive'];
+	    $scope.directive.category = $scope.directive.categories[0];
+	  }]
+	};
+
+/***/ },
+/* 186 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class='content'>\n    <h2 class=\"content-subhead\">Directives</h2>\n    <div> Angular Built In Directives:\n       <select ng-model='directive.category'>\n         <option ng-repeat='category in directive.categories' value='{{category}}'>{{category}}</option>\n      </select>\n    </div>\n\n</div>\n\n<div class=\"content\" ng-show='directive.category == directive.categories[0]'>\n    <p>\n      What is a Directive? They are markers on a DOM element that tell Angular's HTML\n      compiler ($compiler) to attach a specific behaviour to that DOM element. We can\n      match directives based on:\n    </p>\n    <ul>\n      <li> Element Names: {{directive.element}}, we can create our own custom directives that we can use just like\n      HTML tags. The most important thing to remember is that when we are naming our directive in our angular.module, we name it as camelCase to differ it from HTML elements and then Angular's compile converts the camelCase to a dash format. For example, app.directive('myOwnDirective', function() {}) will be compiled to the DOM as {{directive.custom}}. </li>\n      <li> Attributes:{{directive.attribute}}, AngularJS comes with a lot of built in directives already available to you such as ng-show, ng-hide, ng-repeat, ng-click etc. You can see these in action below. </li>\n      <li> Comments: {{directive.comments}} </li>\n      <li> Classes: {{directive.class}} </li>\n    </ul>\n</div>\n\n<div ng-show='directive.category == directive.categories[1]'>\n  <div class='content'>\n      <h2 class=\"content-subhead\">{{directive.categories[1]}}</h2>\n  </div>\n  <my-ng-model> </my-ng-model>\n</div>\n\n<div ng-show='directive.category == directive.categories[2]'>\n  <div class='content'>\n      <h2 class=\"content-subhead\">{{directive.categories[2]}}</h2>\n  </div>\n  <my-ng-repeat> </my-ng-repeat>\n</div>\n\n<div ng-show='directive.category == directive.categories[3]'>\n  <div class='content'>\n      <h2 class=\"content-subhead\">{{directive.categories[3]}}</h2>\n  </div>\n  <my-ng-hide-and-show> </my-ng-hide-and-show>\n</div>\n\n<div ng-show='directive.category == directive.categories[4]'>\n  <div class='content'>\n      <h2 class=\"content-subhead\">{{directive.categories[4]}}</h2>\n  </div>\n  <my-ng-class> </my-ng-class>\n</div>\n\n<div ng-show='directive.category == directive.categories[5]'>\n  <div class='content'>\n      <h2 class=\"content-subhead\">{{directive.categories[5]}}</h2>\n  </div>\n  <my-ng-click> </my-ng-click>\n</div>\n\n<div ng-show='directive.category == directive.categories[6]'>\n  <div class='content'>\n      <h2 class=\"content-subhead\">{{directive.categories[6]}}</h2>\n  </div>\n  <my-custom-directive> </my-custom-directive>\n</div>\n";
+
+/***/ },
+/* 187 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _homeCtrl = __webpack_require__(188);
 	
 	var _homeCtrl2 = _interopRequireDefault(_homeCtrl);
 	
@@ -52008,7 +52056,7 @@
 	exports.default = stateCtrls.name;
 
 /***/ },
-/* 186 */
+/* 188 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -52024,7 +52072,7 @@
 	};
 
 /***/ },
-/* 187 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52033,13 +52081,37 @@
 	  value: true
 	});
 	
-	var _mainHeader = __webpack_require__(188);
+	var _mainHeader = __webpack_require__(190);
 	
 	var _mainHeader2 = _interopRequireDefault(_mainHeader);
 	
-	var _mainNav = __webpack_require__(192);
+	var _mainNav = __webpack_require__(194);
 	
 	var _mainNav2 = _interopRequireDefault(_mainNav);
+	
+	var _myNgRepeat = __webpack_require__(196);
+	
+	var _myNgRepeat2 = _interopRequireDefault(_myNgRepeat);
+	
+	var _myNgModel = __webpack_require__(198);
+	
+	var _myNgModel2 = _interopRequireDefault(_myNgModel);
+	
+	var _myNgClass = __webpack_require__(200);
+	
+	var _myNgClass2 = _interopRequireDefault(_myNgClass);
+	
+	var _myNgClick = __webpack_require__(202);
+	
+	var _myNgClick2 = _interopRequireDefault(_myNgClick);
+	
+	var _myNgHideAndShow = __webpack_require__(204);
+	
+	var _myNgHideAndShow2 = _interopRequireDefault(_myNgHideAndShow);
+	
+	var _myCustomDirective = __webpack_require__(206);
+	
+	var _myCustomDirective2 = _interopRequireDefault(_myCustomDirective);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -52047,11 +52119,17 @@
 	
 	(0, _mainHeader2.default)(directives);
 	(0, _mainNav2.default)(directives);
+	(0, _myNgRepeat2.default)(directives);
+	(0, _myNgModel2.default)(directives);
+	(0, _myNgClass2.default)(directives);
+	(0, _myNgClick2.default)(directives);
+	(0, _myNgHideAndShow2.default)(directives);
+	(0, _myCustomDirective2.default)(directives);
 	
 	exports.default = directives.name;
 
 /***/ },
-/* 188 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52073,30 +52151,30 @@
 		});
 	};
 	
-	var _mainHeader = __webpack_require__(189);
+	var _mainHeader = __webpack_require__(191);
 	
 	var _mainHeader2 = _interopRequireDefault(_mainHeader);
 	
-	var _mainHeader3 = __webpack_require__(190);
+	var _mainHeader3 = __webpack_require__(192);
 	
 	var _mainHeader4 = _interopRequireDefault(_mainHeader3);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 189 */
+/* 191 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"header\">\n    <h1>Angling For Angular</h1>\n    <h2>By Max Jacobsen</h2>\n    <ul class='center selector'>\n      <li class='goBack' ng-click='root.goBack()' ng-hide='root.noPrevious'> <i class=\"fa fa-arrow-circle-left\" aria-hidden=\"true\"></i> {{root.nav.previous}} </li>\n      <li> {{root.nav.current}} </li>\n      <li ng-click='root.goForward()' ng-hide='root.noNext' class='goForward'> {{root.nav.next}} <i class=\"fa fa-arrow-circle-right\" aria-hidden=\"true\"></i> </li>\n    </ul>\n</div>\n";
 
 /***/ },
-/* 190 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(191);
+	var content = __webpack_require__(193);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -52116,7 +52194,7 @@
 	}
 
 /***/ },
-/* 191 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -52130,7 +52208,7 @@
 
 
 /***/ },
-/* 192 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52149,17 +52227,348 @@
 		});
 	};
 	
-	var _mainNav = __webpack_require__(193);
+	var _mainNav = __webpack_require__(195);
 	
 	var _mainNav2 = _interopRequireDefault(_mainNav);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 193 */
+/* 195 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"menu\">\n    <div class=\"pure-menu\">\n        <a class=\"pure-menu-heading\" href=\"#\">AfA</a>\n\n        <ul class=\"pure-menu-list\">\n            <li class=\"pure-menu-item\"><a ui-sref=\"home\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"home\"}'>Home</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"about-me\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"about-me\"}'>About Me</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"what-is-angular\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"what-is-angular\"}'>AngularJS?</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"why-angular\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"why-angular\"}'>Why Angular?</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"getting-started\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"getting-started\"}'>Getting Started</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"creating-our-first-app\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"creating-our-first-app\"}'>First App!</a></li>\n        </ul>\n    </div>\n</div>\n";
+	module.exports = "\n<div id=\"menu\">\n    <div class=\"pure-menu\">\n        <a class=\"pure-menu-heading\" href=\"#\">AfA</a>\n\n        <ul class=\"pure-menu-list\">\n            <li class=\"pure-menu-item\"><a ui-sref=\"home\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"home\"}'>Home</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"about-me\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"about-me\"}'>About Me</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"what-is-angular\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"what-is-angular\"}'>AngularJS?</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"why-angular\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"why-angular\"}'>Why Angular?</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"getting-started\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"getting-started\"}'>Getting Started</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"creating-our-first-app\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"creating-our-first-app\"}'>First App!</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"directives\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"directives\"}'>Directives</a></li>\n        </ul>\n    </div>\n</div>\n";
+
+/***/ },
+/* 196 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports.default = function (ngModule) {
+	  ngModule.directive('myNgRepeat', function () {
+	    return {
+	      replace: true,
+	      restrict: 'E',
+	      template: _myNgRepeat2.default,
+	      scope: {},
+	      controller: ['$scope', function ($scope) {
+	        $scope.showHTML = true;
+	        $scope.html = '\n<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <title> Angular Tutorial </title>\n    <meta charset="utf-8"></meta>\n    <script src="angular.min.js" type="text/javascript"></script>\n    <script src="app.js" type="text/javascript"></script>\n  </head>\n\n  <body ng-app=\'myApp\'>\n    <div ng-controller=\'mainCtrl\'>\n      <div ng-repeat=\'player in nba.players\'>\n        <h5><a href={{player.url}} target=\'_blank\'> {{player.name}} </a> </h5>\n        <ul>\n          <li> Born: {{player.born}} </li>\n          <li> Height: {{player.height.feet}}\' {{player.height.inches}}" </li>\n          <li> Current Team: {{player.currentTeam}} </li>\n          <li> Championships:{{player.championships}}</li>\n          <li> NBA Finals MVP: {{player.nbaFinalsMVP}} </li>\n          <li> NBA MVP: {{player.mvp}} </li>\n          <li> NBA All Star Team: {{player.nbaAllstarTeam}} </li>\n        </ul>\n      </div>\n    </div>\n  </body>\n</html>';
+	        $scope.javascript = '\nvar app = angular.module(\'myApp\', []);\n\napp.controller(\'mainCtrl\', function($scope){\n$scope.nba = {};\n$scope.nba.players = [\n  {\n    name: \'Lebron James\',\n    height: {feet: 6,inches: 8},\n    born: \'December 30, 1984\',\n    currentTeam: \'Cleveland Cavaliers\',\n    championships: 2,\n    nbaFinalsMVP: 2,\n    nbaAllstarTeam: 12,\n    mvp: 4,\n    url: \'https://en.wikipedia.org/wiki/LeBron_James\'\n  },\n  {\n    name: \'Michale Jordan\',\n    height: {feet: 6,inches: 6  },\n    born: \'February 17, 1963\',\n    currentTeam: \'Retired\',\n    championships: 6,\n    nbaFinalsMVP: 6,\n    nbaAllstarTeam: 14,\n    mvp: 5,\n    url: \'https://en.wikipedia.org/wiki/Michael_Jordan\'\n  },\n  {\n    name: \'Stephen Curry\',\n    height: {feet: 6,inches: 3 },\n    born: \'\tMarch 14, 1988\',\n    currentTeam: \'Golden State Warriors\',\n    championships: 1,\n    nbaFinalsMVP: 0,\n    nbaAllstarTeam: 3,\n    mvp: 2,\n    url: \'https://en.wikipedia.org/wiki/Stephen_Curry\'\n  },\n  {\n    name: \'Damian Lillard\',\n    height: {feet: 6,inches: 3},\n    born: \'July 15, 1990 \',\n    currentTeam: \'Portland Trail Blazers\',\n    championships: 0,\n    nbaFinalsMVP: 0,\n    nbaAllstarTeam: 2,\n    mvp: 0,\n    url: \'https://en.wikipedia.org/wiki/Damian_Lillard\'\n  }]\n});\n';
+	        $scope.description = '\n/* ng-repeat, creates a template once per item in a collection.\nEach template will have its own given scope with a angularJS\n$index is set to the item index */\n\n/* You can use ng-repeat to itterate over a object but this takes\naway the use of built-in filters orderBy and filter.\n Using ng-repeat on a array is usually the easiest way. */\n\n/* index.html\n<!-- ng-repeat is using the div and all our contents as our\ntemplate. It will repeat player in nba.players which is\neach object within our $scope.nba.players array in app.js --> */\n\n/* app.js\ncreates a array of players in our $scope.nba.players array and\nadds them as objects. We will use this as our model in index.html\n*/';
+	      }]
+	    };
+	  });
+	};
+	
+	var _myNgRepeat = __webpack_require__(197);
+	
+	var _myNgRepeat2 = _interopRequireDefault(_myNgRepeat);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 197 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <div ng-controller='mainCtrl'>\n        <div ng-repeat='player in nba.players'>\n          <h5><a href={{player.url}} target='_blank'> {{player.name}} </a> </h5>\n          <ul>\n            <li> Born: {{player.born}} </li>\n            <li> Height: {{player.height.feet}}' {{player.height.inches}}\" </li>\n            <li> Current Team: {{player.currentTeam}} </li>\n            <li> Championships:{{player.championships}}</li>\n            <li> NBA Finals MVP: {{player.nbaFinalsMVP}} </li>\n            <li> NBA MVP: {{player.mvp}} </li>\n            <li> NBA All Star Team: {{player.nbaAllstarTeam}} </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n        $scope.name = <input type='text' ng-model='name'> </input>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
+
+/***/ },
+/* 198 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports.default = function (ngModule) {
+	  ngModule.directive('myNgModel', function () {
+	    return {
+	      replace: true,
+	      restrict: 'E',
+	      template: _myNgModel2.default,
+	      scope: {},
+	      controller: ['$scope', function ($scope) {
+	        $scope.showHTML = true;
+	        $scope.html = '\n<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <title> Angular Tutorial </title>\n    <meta charset="utf-8"></meta>\n    <script src="angular.min.js" type="text/javascript"></script>\n    <script src="app.js" type="text/javascript"></script>\n  </head>\n\n  <body ng-app=\'myApp\'>\n    <!-- Example of two way data binding with ng-model -->\n    <h2> 2-way Data Binding </h2>\n    <div ng-controller=\'bindingExampleCtrl\'>\n      Control the text below: <input ng-model=\'binding.name\'>\n      <h1> {{binding.name}} </h1>\n    </div>\n\n    <!-- Example of prototypical inheritance  -->\n    <h2> Example of Prototypical Inheritance (bad practice) </h2>\n    <div ng-controller=\'badExampleParentCtrl\'>\n      <strong> Parent Ctrl </strong> <input ng-model=\'name\' >\n      <p> {{name}} </p>\n      <div ng-controller=\'badExampleChildCtrl\'>\n        <strong> Child Ctrl:</strong> <input ng-model=\'name\'>\n        <p>  {{name}} </p>\n      </div>\n    </div>\n\n<!-- Proper use of ng-model eliminating prototypical inheritance -->\n    <h2> Example of properly using ng-model with \'.\' <br>\n      to avoid weird child prototypical inheritance </h2>\n    <div ng-controller=\'goodExampleParentCtrl\'>\n      <strong> Parent Ctrl </strong> <input ng-model=\'parent.name\'>\n      <p>{{parent.name}} </p>\n      <div ng-controller=\'goodExampleChildCtrl\'>\n        <strong> Child Ctrl:</strong>  <input ng-model=\'child.name\'>\n        <p> {{child.name}} </p>\n      </div>\n    </div>\n  </body>\n</html>';
+	        $scope.javascript = '\nvar app = angular.module(\'myApp\', []);\napp.controller(\'bindingExampleCtrl\', function($scope){\n  $scope.binding = {};\n  $scope.binding.name = \'Type here to see my 2-way data binding\';\n});\napp.controller(\'badExampleParentCtrl\', function($scope){\n  $scope.name = \'prototypical inheritance at work\';\n});\napp.controller(\'badExampleChildCtrl\', function($scope){});\napp.controller(\'goodExampleParentCtrl\', function($scope){\n  $scope.parent = {};\n  $scope.parent.name = \'My child controller does not inherit me anymore\';\n});\napp.controller(\'goodExampleChildCtrl\', function($scope){\n  $scope.child = {};\n  $scope.child.name = \'I am my own scope\';\n});\n\t\t\t\t';
+	        $scope.description = '\n/* ng-model binds the view into the model. ngModel will\ntry to bind the property given by evaluating the expression\nin its current scope.  If the property doesn\'t already\nexist on the scope it will try to create it. */\n\n/* you can find further documentation on it here:\nhttps://docs.angularjs.org/api/ng/directive/ngModel */\n\n/* In AngularJS a child controller scope prototypically\ninherits from its parent scope. One exception for this\nis when we attach scope: {} to a directive but\nwe will learn more about that in the create custom\ndirective section. Sometimes it is difficult to\nsee this inheritance happening. In the first\ndiv we show a example of how the $scope.name is being\ninhertited. The following creates it own new scope and follows\nprototypical inheritance: ng-repeat, ng-include, ng-switch\nng-view, ng-controller, directive with scope true.\n So we can see in the mainCtrl and childCtrl example\n if we type in the mainCtrl first the child prototypical\n inherits $scope.name. But if we type in the child Ctrl first the\n child controller creates its new scope and is no longer\n bound to the mainCtrl $scope.name.*/\n\n /* It is bad practice to next controllers inside of controllers,\n simply using this as a example to show prototypical inheritance.*/\n\n /* This is why it is good practice to to always have a \'.\'\n in your models which will ensure your prototypical inheritance\n is in play. Watch these three videos to learn more\n\n https://www.youtube.com/watch?v=ZhfUv0spHCY&feature=youtu.be&t=30m\n */\n\n /* Good angular Practices: Treat scope as read-only in templates\n and write-only in controllers, $scope is supposed to refer to your\n model, not be the model. When doing 2-way data binding, make sure\n you don\'t bind directly to the scope properties. Weird behavior in\n child scopes.*/\n\t\t\t\t';
+	      }]
+	    };
+	  });
+	};
+	
+	var _myNgModel = __webpack_require__(199);
+	
+	var _myNgModel2 = _interopRequireDefault(_myNgModel);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 199 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <h2> 2-way Data Binding </h2>\n      <div ng-controller='bindingExampleCtrl'>\n        Control the text below: <input ng-model='binding.name'>\n        <p> {{binding.name}} </p>\n      </div>\n      <h2> Example of Prototypical Inheritance (bad practice) </h2>\n      <div ng-controller='badExampleParentCtrl'>\n        <strong> Parent Ctrl </strong> <input ng-model='name' >\n        <p> {{name}} </p>\n        <div ng-controller='badExampleChildCtrl'>\n          <strong> Child Ctrl:</strong> <input ng-model='name'>\n          <p>  {{name}} </p>\n        </div>\n      </div>\n      <h2> Example of properly using ng-model with '.' <br>\n        to avoid weird child prototypical inheritance </h2>\n      <div ng-controller='goodExampleParentCtrl'>\n        <strong> Parent Ctrl </strong> <input ng-model='parent.name'>\n        <p>{{parent.name}} </p>\n        <div ng-controller='goodExampleChildCtrl'>\n          <strong> Child Ctrl:</strong>  <input ng-model='child.name'>\n          <p> {{child.name}} </p>\n        </div>\n      </div>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
+
+/***/ },
+/* 200 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	exports.default = function (ngModule) {
+		ngModule.directive('myNgClass', function () {
+			return {
+				replace: true,
+				restrict: 'E',
+				template: _myNgClass2.default,
+				scope: {},
+				controller: ['$scope', function ($scope) {
+					$scope.name = 'max';
+				}]
+			};
+		});
+	};
+	
+	var _myNgClass = __webpack_require__(201);
+	
+	var _myNgClass2 = _interopRequireDefault(_myNgClass);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 201 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <h2> Hello {{name}} </h2>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n        $scope.name = <input type='text' ng-model='name'> </input>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
+
+/***/ },
+/* 202 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	exports.default = function (ngModule) {
+		ngModule.directive('myNgClick', function () {
+			return {
+				replace: true,
+				restrict: 'E',
+				template: _myNgClick2.default,
+				scope: {},
+				controller: ['$scope', function ($scope) {
+					$scope.name = 'max';
+				}]
+			};
+		});
+	};
+	
+	var _myNgClick = __webpack_require__(203);
+	
+	var _myNgClick2 = _interopRequireDefault(_myNgClick);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 203 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <h2> Hello {{name}} </h2>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n        $scope.name = <input type='text' ng-model='name'> </input>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
+
+/***/ },
+/* 204 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	exports.default = function (ngModule) {
+		ngModule.directive('myNgHideAndShow', function () {
+			return {
+				replace: true,
+				restrict: 'E',
+				template: _myNgHideAndShow2.default,
+				scope: {},
+				controller: ['$scope', function ($scope) {
+					$scope.name = 'max';
+				}]
+			};
+		});
+	};
+	
+	var _myNgHideAndShow = __webpack_require__(205);
+	
+	var _myNgHideAndShow2 = _interopRequireDefault(_myNgHideAndShow);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 205 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <h2> Hello {{name}} </h2>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n        $scope.name = <input type='text' ng-model='name'> </input>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
+
+/***/ },
+/* 206 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	exports.default = function (ngModule) {
+		ngModule.directive('myCustomDirective', function () {
+			return {
+				replace: true,
+				restrict: 'E',
+				template: _myCustomDirective2.default,
+				scope: {},
+				controller: ['$scope', function ($scope) {
+					$scope.name = 'max';
+				}]
+			};
+		});
+	};
+	
+	var _myCustomDirective = __webpack_require__(207);
+	
+	var _myCustomDirective2 = _interopRequireDefault(_myCustomDirective);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 207 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <h2> Hello {{name}} </h2>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n        $scope.name = <input type='text' ng-model='name'> </input>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
+
+/***/ },
+/* 208 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _badExampleCtrl = __webpack_require__(209);
+	
+	var _badExampleCtrl2 = _interopRequireDefault(_badExampleCtrl);
+	
+	var _goodExampleCtrl = __webpack_require__(210);
+	
+	var _goodExampleCtrl2 = _interopRequireDefault(_goodExampleCtrl);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var controllers = angular.module('controllers', []);
+	
+	(0, _badExampleCtrl2.default)(controllers);
+	(0, _goodExampleCtrl2.default)(controllers);
+	
+	exports.default = controllers.name;
+
+/***/ },
+/* 209 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports.default = function (ngModule) {
+	  ngModule.controller('badExampleParentCtrl', function ($scope) {
+	    $scope.name = 'prototypical inheritance at work';
+	  }).controller('badExampleChildCtrl', function ($scope) {});
+	};
+
+/***/ },
+/* 210 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+			value: true
+	});
+	
+	exports.default = function (ngModule) {
+			ngModule.controller('bindingExampleCtrl', function ($scope) {
+					$scope.binding = {};
+					$scope.binding.name = 'Type here to see my 2-way data binding';
+			}).controller('goodExampleParentCtrl', function ($scope) {
+					$scope.parent = {};
+					$scope.parent.name = 'My child controller does not inherit me anymore';
+			}).controller('goodExampleChildCtrl', function ($scope) {
+					$scope.child = {};
+					$scope.child.name = 'I am my own scope';
+			}).controller('mainCtrl', function ($scope) {
+					$scope.nba = {};
+					$scope.nba.players = [{
+							name: 'Lebron James',
+							height: { feet: 6, inches: 8 },
+							born: 'December 30, 1984',
+							currentTeam: 'Cleveland Cavaliers',
+							championships: 2,
+							nbaFinalsMVP: 2,
+							nbaAllstarTeam: 12,
+							mvp: 4,
+							url: 'https://en.wikipedia.org/wiki/LeBron_James'
+					}, {
+							name: 'Michale Jordan',
+							height: { feet: 6, inches: 6 },
+							born: 'February 17, 1963',
+							currentTeam: 'Retired',
+							championships: 6,
+							nbaFinalsMVP: 6,
+							nbaAllstarTeam: 14,
+							mvp: 5,
+							url: 'https://en.wikipedia.org/wiki/Michael_Jordan'
+					}, {
+							name: 'Stephen Curry',
+							height: { feet: 6, inches: 3 },
+							born: '	March 14, 1988',
+							currentTeam: 'Golden State Warriors',
+							championships: 1,
+							nbaFinalsMVP: 0,
+							nbaAllstarTeam: 3,
+							mvp: 2,
+							url: 'https://en.wikipedia.org/wiki/Stephen_Curry'
+					}, {
+							name: 'Damian Lillard',
+							height: { feet: 6, inches: 3 },
+							born: 'July 15, 1990 ',
+							currentTeam: 'Portland Trail Blazers',
+							championships: 0,
+							nbaFinalsMVP: 0,
+							nbaAllstarTeam: 2,
+							mvp: 0,
+							url: 'https://en.wikipedia.org/wiki/Damian_Lillard'
+					}];
+			});
+	};
 
 /***/ }
 /******/ ]);
