@@ -72,7 +72,7 @@ app.controller('hideAndShowCtrl', function($scope){
 	$scope.view.showMe = true;
 	$scope.view.name = 'max';
 	$scope.view.category = 'sports';
-});`
+});`;
 			$scope.description =
 `/* ng-show directive show or hides the given
 HTML element it is attached too and all of its children
@@ -92,7 +92,7 @@ expression evaluates to truthy the .ng-hide class is removed */
  opposite evaluation for appllying the ng-hide class.
  If the expression evaluates to truthy, then the class
  is applied and if it evaluates to falsy the class is
-removed */`
+removed */`;
       }]
 		};
 	});

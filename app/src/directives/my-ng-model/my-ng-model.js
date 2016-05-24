@@ -49,7 +49,7 @@ export default function( ngModule ) {
       </div>
     </div>
   </body>
-</html>`
+</html>`;
 				$scope.javascript = `
 var app = angular.module('myApp', []);
 app.controller('bindingExampleCtrl', function($scope){
@@ -68,7 +68,7 @@ app.controller('goodExampleChildCtrl', function($scope){
   $scope.child = {};
   $scope.child.name = 'I am my own scope';
 });
-				`
+				`;
 				$scope.description = `
 /* ng-model binds the view into the model. ngModel will
 try to bind the property given by evaluating the expression
@@ -109,7 +109,7 @@ ng-view, ng-controller, directive with scope true.
  model, not be the model. When doing 2-way data binding, make sure
  you don't bind directly to the scope properties. Weird behavior in
  child scopes.*/
-				`
+				`;
       }]
 		};
 	});

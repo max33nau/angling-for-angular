@@ -19,7 +19,7 @@ export default {
         <p> HELLO WORLD </p>
       </body>
     </html>`;
-    $scope.javascript = `// Angular App Will GO HERE `
+    $scope.javascript = `// Angular App Will GO HERE `;
     $scope.description = `/*If you did not do a git clone on my repo then go to
     angularJS website: https://angularjs.org
     and then click the download angular 1 button
@@ -29,6 +29,6 @@ export default {
 
     /* You should now be able to run your application in
     the browser and you should see a HELLO WORLD in paragraph
-    form. If you see this, then you are ready to get started. */`
+    form. If you see this, then you are ready to get started. */`;
   }]
 };

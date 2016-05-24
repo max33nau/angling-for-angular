@@ -1,5 +1,5 @@
 {
-  "name": "my-portoflio-app",
+  "name": "angling-for-angular",
   "version": "1.0.0",
   "description": "Front End Pre Webpack",
   "main": "index.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/max33nau/myPortfolioApp.git"
+    "url": "git+https://github.com/max33nau/angling-for-angular.git"
   },
   "author": "Max Jacobsen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/max33nau/myPortfolioApp/issues"
+    "url": "https://github.com/max33nau/angling-for-angular/issues"
   },
-  "homepage": "https://github.com/max33nau/myPortfolioApp#readme",
+  "homepage": "https://github.com/max33nau/angling-for-angular#readme",
   "devDependencies": {
     "babel-core": "^6.7.2",
     "babel-loader": "^6.2.4",
@@ -51,7 +51,8 @@
     "angular": "^1.5.2",
     "angular-highlightjs": "^0.6.1",
     "angular-ui-router": "^0.2.18",
-    "highlight.js": "^9.4.0"
+    "highlight.js": "^9.4.0",
+    "jquery": "^2.2.4"
   },
   "babel": {
     "presets": [

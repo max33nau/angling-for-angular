@@ -1,4 +1,6 @@
 <div class="content">
     <h2 class="content-subhead">References</h2>
-
+    <div ng-repeat='link in references.links'>
+      <a href='{{link.url}}' target="_blank"> {{link.url}} </a>
+    </div>
 </div>

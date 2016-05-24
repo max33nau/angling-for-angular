@@ -86,7 +86,7 @@ $scope.nba.players = [
     url: 'https://en.wikipedia.org/wiki/Damian_Lillard'
   }]
 });
-`
+`;
 				$scope.description = `
 /* ng-repeat, creates a template once per item in a collection.
 Each template will have its own given scope with a angularJS
@@ -104,7 +104,7 @@ each object within our $scope.nba.players array in app.js --> */
 /* app.js
 creates a array of players in our $scope.nba.players array and
 adds them as objects. We will use this as our model in index.html
-*/`
+*/`;
       }]
 		};
 	});

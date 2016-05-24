@@ -57,7 +57,6 @@ export default function( ngModule ) {
 	      nbaAllstarTeam: 2,
 	      mvp: 0,
 	      url: 'https://en.wikipedia.org/wiki/Damian_Lillard'
-	    }]
+	    }];
 	});
-
 }

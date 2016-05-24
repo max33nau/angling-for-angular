@@ -80,7 +80,7 @@ If the expression evaluates to an object,
 then for each key-value pair of the object
 with a truthy value the corresponding key is
 used as a class name
-https://docs.angularjs.org/api/ng/directive/ngClass*/ `
+https://docs.angularjs.org/api/ng/directive/ngClass*/ `;
       }]
 		};
 	});

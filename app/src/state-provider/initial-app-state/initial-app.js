@@ -28,7 +28,7 @@ export default {
     app.controller('mainCtrl', function($scope){
       $scope.name = 'Max';
     });
-    `
+    `;
     $scope.name = 'Max';
     $scope.description = `/*
     index.html
@@ -66,6 +66,6 @@ export default {
 
     Variables stored on the $scope object are known as the model
 
-    */`
+    */`;
   }]
 };

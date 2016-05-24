@@ -11,11 +11,12 @@ import './purecss/side-menu.css';
 import './styles/main.scss';
 
 /* highlight.js */
-import './styles/tomorrow-night-bright.css';
 import hljs from 'highlight.js';
 hljs.initHighlightingOnLoad();
 
 import 'angular-highlightjs';
+
+import $ from 'jquery';
 
 /* UI-Router State Provider Config */
 import configStateProvider from './state-provider';
@@ -32,7 +33,6 @@ import controllers from './controllers';
 
 
 const app = angular.module('myApp', [
-  'hljs',
   stateRouter,
   stateCtrls,
   directives,
@@ -43,7 +43,7 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlR
   $urlRouterProvider.otherwise('/');
   configStateProvider($stateProvider);
 }])
-.run( function($rootScope, $state) {
+.run(['$rootScope', '$state', function($rootScope, $state) {
   $rootScope.root = {};
   $rootScope.root.nav = {};
   $rootScope.root.states = ['','home','about-me','what-is-angular','why-angular','getting-started', 'creating-our-first-app','directives', 'custom-directive','so-much-angular', 'the-future', 'references', ''];
@@ -56,12 +56,12 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlR
     var ii = $rootScope.root.headerNames.indexOf($rootScope.root.nav.next);
     var nextState =  $rootScope.root.states[ii];
     $state.go(nextState);
-  }
+  };
   $rootScope.root.goBack = function() {
     var ii = $rootScope.root.headerNames.indexOf($rootScope.root.nav.previous);
     var nextState =  $rootScope.root.states[ii];
     $state.go(nextState);
-  }
+  };
   $rootScope.$on('$stateChangeStart', function (event,toState) {
     $rootScope.root.activeLink = toState.name;
     $rootScope.root.ii = $rootScope.root.states.indexOf(toState.name);
@@ -79,7 +79,13 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlR
       $rootScope.root.noNext = false;
     }
   });
-});
+  $rootScope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams) {
+    $('#main').find('pre code').each(function(i,block){
+      console.log(block);
+      hljs.highlightBlock(block);
+    });
+  });
+}]);
 
 
 angular.element(document).ready(function() {

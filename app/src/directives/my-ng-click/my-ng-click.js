@@ -94,13 +94,13 @@ app.controller('ngClickCtrl', function($scope){
     $scope.data.contacts.push(newContact);
     $scope.contact = {};
   };
-});	`
+});	`;
 
 	$scope.description = `
 /* add the ng-click directive to any HTML element to call
 a function within your scope or you can actually change
 variables within the ng-click='contact.name = "default"'
-when the element is clicked */`
+when the element is clicked */`;
       }]
 		};
 	});

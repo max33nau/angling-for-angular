@@ -9,7 +9,7 @@ export default {
     $scope.elementExample = '<my-custom-directive> </my-custom-directive>';
     $scope.attributeExample = '<div my-custom-directive> </div>';
     $scope.classExample = '<div class="my-custom-directive: exp;"> </div>';
-    $scope.commentExample = '<!-- directive: my-custom-directive exp -->'
+    $scope.commentExample = '<!-- directive: my-custom-directive exp -->';
     $scope.showHTML = true;
     $scope.my = {};
     $scope.my.projects = [
@@ -29,7 +29,7 @@ export default {
         name: 'My Github',
         url: 'https://github.com/max33nau'
       }
-    ]
+    ];
     $scope.html = `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -92,7 +92,7 @@ app.directive('aTargetBlank', function(){
       myUrl: '@'
     }
   }
-}) `
+}) `;
     $scope.description = `
 /* Remember when we name our directive in camelCase,
 angularJS will convert it to snake-case. So when we
@@ -123,6 +123,6 @@ for now just know using '@' will read into our directive
 what we set in the element. */
 
 /* We could add a controller to our directive but it is
-not necessary for right now. */`
+not necessary for right now. */`;
   }]
 };

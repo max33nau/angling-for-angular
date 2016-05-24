@@ -67,6 +67,6 @@ export default {
         name: 'Code Academy Angular JS',
         url: 'https://www.codecademy.com/learn/learn-angularjs'
       }
-    ]
+    ];
   }]
 };
