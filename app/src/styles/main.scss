@@ -42,3 +42,18 @@
   width: 500px;
   word-wrap: break-word;
 }
+
+.answers {
+  font-weight: bold;
+  color: black;
+  display: inline-block;
+  margin-left: 10px;
+  padding: 5px;
+  text-align: center;
+}
+.correct {
+  background-color: green;
+}
+.wrong {
+  background-color: red;
+}

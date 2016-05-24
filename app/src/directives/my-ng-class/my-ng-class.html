@@ -1,6 +1,28 @@
 <div class="containsCode">
     <div class='renderedPage pure-u-1-2'>
-      <h2> Hello {{name}} </h2>
+      <h2> Test </h2>
+      <ol>
+      <li> 2 + 2 = <input ng-model='questions.one'>
+        <p ng-show='questions.one'
+        ng-class='{correct: questions.one == 4, wrong: questions.one != 4}'
+        class='answers'>
+        Answer to one: {{questions.one}} </p>
+      </li>
+      <br>
+      <li> 7 * 3 = <input ng-model='questions.two'>
+        <p ng-show='questions.two'
+        ng-class='{correct: questions.two == 21, wrong: questions.two != 21}'
+        class='answers'>
+        Answer to two: {{questions.two}} </p>
+      </li>
+      <br>
+      <li> 2^4= <input ng-model='questions.three'>
+        <p ng-show='questions.three'
+        ng-class='{correct: questions.three == 16, wrong: questions.three != 16}'
+        class='answers'>
+        Answer to three: {{questions.three}} </p>
+      </li>
+    </ol>
     </div>
     <div class='actualCode'>
       <ul class='codeNav'>
@@ -18,7 +40,6 @@
         <pre>
           <code> {{javascript}} </code>
         </pre>
-        $scope.name = <input type='text' ng-model='name'> </input>
       </div>
 
       <div class='preCode' ng-show='showDescription'>
@@ -27,4 +48,4 @@
         </pre>
       </div>
     </div>
-  </div>
+</div>
