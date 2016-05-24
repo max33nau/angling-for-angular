@@ -72,15 +72,15 @@
 	
 	var _stateProvider2 = _interopRequireDefault(_stateProvider);
 	
-	var _stateControllers = __webpack_require__(189);
+	var _stateControllers = __webpack_require__(195);
 	
 	var _stateControllers2 = _interopRequireDefault(_stateControllers);
 	
-	var _directives = __webpack_require__(191);
+	var _directives = __webpack_require__(197);
 	
 	var _directives2 = _interopRequireDefault(_directives);
 	
-	var _controllers = __webpack_require__(211);
+	var _controllers = __webpack_require__(217);
 	
 	var _controllers2 = _interopRequireDefault(_controllers);
 	
@@ -116,8 +116,8 @@
 	}]).run(function ($rootScope, $state) {
 	  $rootScope.root = {};
 	  $rootScope.root.nav = {};
-	  $rootScope.root.states = ['', 'home', 'about-me', 'what-is-angular', 'why-angular', 'getting-started', 'creating-our-first-app', 'directives', 'custom-directive', ''];
-	  $rootScope.root.headerNames = ['', 'Home', 'About Me', 'So What Is AngularJS?', 'Why Choose Angular?', 'Lets Get Started', 'Creating Our First App', 'Directives', 'Build Custom Directive', ''];
+	  $rootScope.root.states = ['', 'home', 'about-me', 'what-is-angular', 'why-angular', 'getting-started', 'creating-our-first-app', 'directives', 'custom-directive', 'so-much-angular', 'the-future', 'references', ''];
+	  $rootScope.root.headerNames = ['', 'Home', 'About Me', 'So What Is AngularJS?', 'Why Choose Angular?', 'Lets Get Started', 'Creating Our First App', 'Directives', 'Build a Custom Directive', 'So much AngularJS, so little time', 'The Future', 'References'];
 	  $rootScope.root.nav.previous = $rootScope.root.states[0];
 	  $rootScope.root.nav.current = $rootScope.root.states[1];
 	  $rootScope.root.nav.next = $rootScope.root.states[2];
@@ -51735,7 +51735,7 @@
 	});
 	
 	exports.default = function ($stateProvider) {
-	  $stateProvider.state('home', _home2.default).state('about-me', _aboutMe2.default).state('what-is-angular', _whatIsAngular2.default).state('why-angular', _whyAngular2.default).state('getting-started', _gettingStarted2.default).state('creating-our-first-app', _initialApp2.default).state('directives', _directives2.default).state('custom-directive', _customDirective2.default);
+	  $stateProvider.state('home', _home2.default).state('about-me', _aboutMe2.default).state('what-is-angular', _whatIsAngular2.default).state('why-angular', _whyAngular2.default).state('getting-started', _gettingStarted2.default).state('creating-our-first-app', _initialApp2.default).state('directives', _directives2.default).state('custom-directive', _customDirective2.default).state('so-much-angular', _soMuchAngular2.default).state('the-future', _theFuture2.default).state('references', _references2.default);
 	};
 	
 	var _home = __webpack_require__(171);
@@ -51769,6 +51769,18 @@
 	var _customDirective = __webpack_require__(187);
 	
 	var _customDirective2 = _interopRequireDefault(_customDirective);
+	
+	var _soMuchAngular = __webpack_require__(189);
+	
+	var _soMuchAngular2 = _interopRequireDefault(_soMuchAngular);
+	
+	var _theFuture = __webpack_require__(191);
+	
+	var _theFuture2 = _interopRequireDefault(_theFuture);
+	
+	var _references = __webpack_require__(193);
+	
+	var _references2 = _interopRequireDefault(_references);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -52099,7 +52111,88 @@
 	  value: true
 	});
 	
-	var _homeCtrl = __webpack_require__(190);
+	var _soMuchAngular = __webpack_require__(190);
+	
+	var _soMuchAngular2 = _interopRequireDefault(_soMuchAngular);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  url: '/so-much-angular',
+	  template: _soMuchAngular2.default
+	};
+
+/***/ },
+/* 190 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"content\">\n    <h2 class=\"content-subhead\">So much more of AngularJS, so little time</h2>\n\n</div>\n";
+
+/***/ },
+/* 191 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _theFuture = __webpack_require__(192);
+	
+	var _theFuture2 = _interopRequireDefault(_theFuture);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  url: '/future-of-angular',
+	  template: _theFuture2.default
+	};
+
+/***/ },
+/* 192 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"content\">\n    <h2 class=\"content-subhead\">Angular 2 is coming... </h2>\n\n\n\n</div>\n";
+
+/***/ },
+/* 193 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _references = __webpack_require__(194);
+	
+	var _references2 = _interopRequireDefault(_references);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  url: '/references',
+	  template: _references2.default
+	};
+
+/***/ },
+/* 194 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"content\">\n    <h2 class=\"content-subhead\">References</h2>\n\n</div>\n";
+
+/***/ },
+/* 195 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _homeCtrl = __webpack_require__(196);
 	
 	var _homeCtrl2 = _interopRequireDefault(_homeCtrl);
 	
@@ -52112,7 +52205,7 @@
 	exports.default = stateCtrls.name;
 
 /***/ },
-/* 190 */
+/* 196 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -52128,7 +52221,7 @@
 	};
 
 /***/ },
-/* 191 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52137,39 +52230,39 @@
 	  value: true
 	});
 	
-	var _mainHeader = __webpack_require__(192);
+	var _mainHeader = __webpack_require__(198);
 	
 	var _mainHeader2 = _interopRequireDefault(_mainHeader);
 	
-	var _mainNav = __webpack_require__(196);
+	var _mainNav = __webpack_require__(202);
 	
 	var _mainNav2 = _interopRequireDefault(_mainNav);
 	
-	var _myNgRepeat = __webpack_require__(198);
+	var _myNgRepeat = __webpack_require__(204);
 	
 	var _myNgRepeat2 = _interopRequireDefault(_myNgRepeat);
 	
-	var _myNgModel = __webpack_require__(200);
+	var _myNgModel = __webpack_require__(206);
 	
 	var _myNgModel2 = _interopRequireDefault(_myNgModel);
 	
-	var _myNgClass = __webpack_require__(202);
+	var _myNgClass = __webpack_require__(208);
 	
 	var _myNgClass2 = _interopRequireDefault(_myNgClass);
 	
-	var _myNgClick = __webpack_require__(204);
+	var _myNgClick = __webpack_require__(210);
 	
 	var _myNgClick2 = _interopRequireDefault(_myNgClick);
 	
-	var _myNgHideAndShow = __webpack_require__(206);
+	var _myNgHideAndShow = __webpack_require__(212);
 	
 	var _myNgHideAndShow2 = _interopRequireDefault(_myNgHideAndShow);
 	
-	var _myCustomDirective = __webpack_require__(208);
+	var _myCustomDirective = __webpack_require__(214);
 	
 	var _myCustomDirective2 = _interopRequireDefault(_myCustomDirective);
 	
-	var _aTargetBlank = __webpack_require__(210);
+	var _aTargetBlank = __webpack_require__(216);
 	
 	var _aTargetBlank2 = _interopRequireDefault(_aTargetBlank);
 	
@@ -52190,7 +52283,7 @@
 	exports.default = directives.name;
 
 /***/ },
-/* 192 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52212,30 +52305,30 @@
 		});
 	};
 	
-	var _mainHeader = __webpack_require__(193);
+	var _mainHeader = __webpack_require__(199);
 	
 	var _mainHeader2 = _interopRequireDefault(_mainHeader);
 	
-	var _mainHeader3 = __webpack_require__(194);
+	var _mainHeader3 = __webpack_require__(200);
 	
 	var _mainHeader4 = _interopRequireDefault(_mainHeader3);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 193 */
+/* 199 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"header\">\n    <h1>Angling For Angular</h1>\n    <h2>By Max Jacobsen</h2>\n    <ul class='center selector'>\n      <li class='goBack' ng-click='root.goBack()' ng-hide='root.noPrevious'> <i class=\"fa fa-arrow-circle-left\" aria-hidden=\"true\"></i> {{root.nav.previous}} </li>\n      <li> {{root.nav.current}} </li>\n      <li ng-click='root.goForward()' ng-hide='root.noNext' class='goForward'> {{root.nav.next}} <i class=\"fa fa-arrow-circle-right\" aria-hidden=\"true\"></i> </li>\n    </ul>\n</div>\n";
 
 /***/ },
-/* 194 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(195);
+	var content = __webpack_require__(201);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -52255,7 +52348,7 @@
 	}
 
 /***/ },
-/* 195 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -52269,7 +52362,7 @@
 
 
 /***/ },
-/* 196 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52288,20 +52381,20 @@
 		});
 	};
 	
-	var _mainNav = __webpack_require__(197);
+	var _mainNav = __webpack_require__(203);
 	
 	var _mainNav2 = _interopRequireDefault(_mainNav);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 197 */
+/* 203 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"menu\">\n    <div class=\"pure-menu\">\n        <a class=\"pure-menu-heading\" href=\"#\">AfA</a>\n\n        <ul class=\"pure-menu-list\">\n            <li class=\"pure-menu-item\"><a ui-sref=\"home\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"home\"}'>Home</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"about-me\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"about-me\"}'>About Me</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"what-is-angular\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"what-is-angular\"}'>AngularJS?</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"why-angular\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"why-angular\"}'>Why Angular?</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"getting-started\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"getting-started\"}'>Getting Started</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"creating-our-first-app\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"creating-our-first-app\"}'>First App!</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"directives\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"directives\"}'>Directives</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"custom-directive\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"custom-directive\"}'>Custom Directive</a></li>\n        </ul>\n    </div>\n</div>\n";
+	module.exports = "\n<div id=\"menu\">\n    <div class=\"pure-menu\">\n        <a class=\"pure-menu-heading\" href=\"#\">angling-ng</a>\n\n        <ul class=\"pure-menu-list\">\n            <li class=\"pure-menu-item\"><a ui-sref=\"home\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"home\"}'>Home</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"about-me\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"about-me\"}'>About Me</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"what-is-angular\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"what-is-angular\"}'>AngularJS?</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"why-angular\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"why-angular\"}'>Why Angular?</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"getting-started\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"getting-started\"}'>Getting Started</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"creating-our-first-app\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"creating-our-first-app\"}'>First App!</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"directives\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"directives\"}'>Directives</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"custom-directive\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"custom-directive\"}'>Custom Directive</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"so-much-angular\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"so-much-angular\"}'>So Much Angular</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"the-future\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"the-future\"}'>The Future</a></li>\n            <li class=\"pure-menu-item\"><a ui-sref=\"references\" class=\"pure-menu-link\" ng-class='{currentLink: root.activeLink == \"references\"}'>References</a></li>\n        </ul>\n    </div>\n</div>\n";
 
 /***/ },
-/* 198 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52327,20 +52420,20 @@
 	  });
 	};
 	
-	var _myNgRepeat = __webpack_require__(199);
+	var _myNgRepeat = __webpack_require__(205);
 	
 	var _myNgRepeat2 = _interopRequireDefault(_myNgRepeat);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 199 */
+/* 205 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <div ng-controller='mainCtrl'>\n        <div ng-repeat='player in nba.players'>\n          <h5><a href={{player.url}} target='_blank'> {{player.name}} </a> </h5>\n          <ul>\n            <li> Born: {{player.born}} </li>\n            <li> Height: {{player.height.feet}}' {{player.height.inches}}\" </li>\n            <li> Current Team: {{player.currentTeam}} </li>\n            <li> Championships:{{player.championships}}</li>\n            <li> NBA Finals MVP: {{player.nbaFinalsMVP}} </li>\n            <li> NBA MVP: {{player.mvp}} </li>\n            <li> NBA All Star Team: {{player.nbaAllstarTeam}} </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
 
 /***/ },
-/* 200 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52366,20 +52459,20 @@
 	  });
 	};
 	
-	var _myNgModel = __webpack_require__(201);
+	var _myNgModel = __webpack_require__(207);
 	
 	var _myNgModel2 = _interopRequireDefault(_myNgModel);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 201 */
+/* 207 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <h2> 2-way Data Binding </h2>\n      <div ng-controller='bindingExampleCtrl'>\n        Control the text below: <input ng-model='binding.name'>\n        <p> {{binding.name}} </p>\n      </div>\n      <h2> Example of Prototypical Inheritance (bad practice) </h2>\n      <div ng-controller='badExampleParentCtrl'>\n        <strong> Parent Ctrl </strong> <input ng-model='name' >\n        <p> {{name}} </p>\n        <div ng-controller='badExampleChildCtrl'>\n          <strong> Child Ctrl:</strong> <input ng-model='name'>\n          <p>  {{name}} </p>\n        </div>\n      </div>\n      <h2> Example of properly using ng-model with '.' <br>\n        to avoid weird child prototypical inheritance </h2>\n      <div ng-controller='goodExampleParentCtrl'>\n        <strong> Parent Ctrl </strong> <input ng-model='parent.name'>\n        <p>{{parent.name}} </p>\n        <div ng-controller='goodExampleChildCtrl'>\n          <strong> Child Ctrl:</strong>  <input ng-model='child.name'>\n          <p> {{child.name}} </p>\n        </div>\n      </div>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
 
 /***/ },
-/* 202 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52405,20 +52498,20 @@
 	  });
 	};
 	
-	var _myNgClass = __webpack_require__(203);
+	var _myNgClass = __webpack_require__(209);
 	
 	var _myNgClass2 = _interopRequireDefault(_myNgClass);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 203 */
+/* 209 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <h2> Test </h2>\n      <ol>\n      <li> 2 + 2 = <input ng-model='questions.one'>\n        <p ng-show='questions.one'\n        ng-class='{correct: questions.one == 4, wrong: questions.one != 4}'\n        class='answers'>\n        Answer to one: {{questions.one}} </p>\n      </li>\n      <br>\n      <li> 7 * 3 = <input ng-model='questions.two'>\n        <p ng-show='questions.two'\n        ng-class='{correct: questions.two == 21, wrong: questions.two != 21}'\n        class='answers'>\n        Answer to two: {{questions.two}} </p>\n      </li>\n      <br>\n      <li> 2^4= <input ng-model='questions.three'>\n        <p ng-show='questions.three'\n        ng-class='{correct: questions.three == 16, wrong: questions.three != 16}'\n        class='answers'>\n        Answer to three: {{questions.three}} </p>\n      </li>\n    </ol>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n</div>\n";
 
 /***/ },
-/* 204 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52468,20 +52561,20 @@
 	  });
 	};
 	
-	var _myNgClick = __webpack_require__(205);
+	var _myNgClick = __webpack_require__(211);
 	
 	var _myNgClick2 = _interopRequireDefault(_myNgClick);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 205 */
+/* 211 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <div>\n        First Name: <input ng-model='contact.firstName'>\n        <br><br>\n        Last Name:  <input ng-model='contact.lastName'>\n        <br><br>\n        Contact: <input ng-model='contact.phoneNumber'>\n        <br><br>\n        <button ng-click='data.addContact(contact)'> Add Contact </button>\n      </div>\n      <div ng-repeat='contact in data.contacts'>\n        <h5> {{contact.firstName}} {{contact.lastName}} </h5>\n        Phone Number: {{contact.phoneNumber}}\n      </div>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n        $scope.name = <input type='text' ng-model='name'> </input>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
 
 /***/ },
-/* 206 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52511,20 +52604,20 @@
 	  });
 	};
 	
-	var _myNgHideAndShow = __webpack_require__(207);
+	var _myNgHideAndShow = __webpack_require__(213);
 	
 	var _myNgHideAndShow2 = _interopRequireDefault(_myNgHideAndShow);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 207 */
+/* 213 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <div>\n        <div id='toggleBetweenOneVariable'>\n          <h2 ng-show='view.showMe'> I show up when view.showMe is TRUE\n          </h2>\n          <h2 ng-hide='view.showMe'> Oh snap you must be FALSE view.showMe\n          </h2>\n        </div>\n        <div id='usingExpressionNgShow'>\n          <h2 ng-show='view.name == \"max\"'> view.name must equal\n            'max' because you can see me </h2>\n          <h2 ng-show='view.name == \"angular\"'> view.name must equal\n            'angular' </h2>\n          <h2 ng-show='view.name == \"cool\"'> view.name must equal\n            'cool' </h2>\n        </div>\n        <br> <br>\n        <select ng-model='view.category'>\n          <option value='sports'>Sports</option>\n          <option value='music'>Music</option>\n          <option value='movies'>Movies</option>\n        </select>\n        <div ng-show='view.category == \"sports\"'>\n          <h5> Sports </h5>\n          <p>Sports are awesome. </p>\n          <p> Go Blazers and Timbers! </p>\n          <p> Basketball is my favorite sport </p>\n        </div>\n        <div ng-show='view.category == \"music\"'>\n          <h5> Music </h5>\n          <ul> Genres:\n            <li> Country </li>\n            <li> Rap </li>\n            <li> Rock </li>\n          </ul>\n        </div>\n        <div ng-show='view.category == \"movies\"'>\n          <h5> Movies </h5>\n          <p> Movies are great, enough said </p>\n        </div>\n      </div>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n        Toggle $scope.view.showMe between true and false:\n        <button ng-click='view.showMe = !view.showMe'> {{view.showMe}}\n        </button> <br> <br>\n        $scope.view.name =<input ng-model='view.name' >\n        enter max, cool, or angular to see results\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
 
 /***/ },
-/* 208 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52547,20 +52640,20 @@
 		});
 	};
 	
-	var _myCustomDirective = __webpack_require__(209);
+	var _myCustomDirective = __webpack_require__(215);
 	
 	var _myCustomDirective2 = _interopRequireDefault(_myCustomDirective);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 209 */
+/* 215 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <h2> Hello {{name}} </h2>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n        $scope.name = <input type='text' ng-model='name'> </input>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
 
 /***/ },
-/* 210 */
+/* 216 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -52583,7 +52676,7 @@
 	};
 
 /***/ },
-/* 211 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52592,11 +52685,11 @@
 	  value: true
 	});
 	
-	var _badExampleCtrl = __webpack_require__(212);
+	var _badExampleCtrl = __webpack_require__(218);
 	
 	var _badExampleCtrl2 = _interopRequireDefault(_badExampleCtrl);
 	
-	var _goodExampleCtrl = __webpack_require__(213);
+	var _goodExampleCtrl = __webpack_require__(219);
 	
 	var _goodExampleCtrl2 = _interopRequireDefault(_goodExampleCtrl);
 	
@@ -52610,7 +52703,7 @@
 	exports.default = controllers.name;
 
 /***/ },
-/* 212 */
+/* 218 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -52626,7 +52719,7 @@
 	};
 
 /***/ },
-/* 213 */
+/* 219 */
 /***/ function(module, exports) {
 
 	'use strict';
