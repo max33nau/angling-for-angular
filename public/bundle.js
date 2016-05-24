@@ -35963,7 +35963,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".currentLink {\n  color: white !important; }\n\n.containsCode {\n  display: flex;\n  width: 100%;\n  justify-content: center;\n  flex-wrap: wrap;\n  align-items: flex-start; }\n\n.codeNav {\n  list-style: none;\n  background-color: black;\n  color: red;\n  padding: 5px;\n  cursor: pointer;\n  border: 1px solid red;\n  text-align: center; }\n  .codeNav li {\n    display: inline-block;\n    padding: 0 20px;\n    margin: 0 10px; }\n    .codeNav li:hover {\n      background-color: green; }\n\n.renderedPage {\n  max-width: 100%;\n  background-color: #fff;\n  border: 2px solid black;\n  padding: 10px;\n  color: black;\n  margin: 20px;\n  width: 500px;\n  word-wrap: break-word; }\n", ""]);
+	exports.push([module.id, ".currentLink {\n  color: white !important; }\n\n.containsCode {\n  display: flex;\n  width: 100%;\n  justify-content: center;\n  flex-wrap: wrap;\n  align-items: flex-start; }\n\n.codeNav {\n  list-style: none;\n  background-color: black;\n  color: red;\n  padding: 5px;\n  cursor: pointer;\n  border: 1px solid red;\n  text-align: center; }\n  .codeNav li {\n    display: inline-block;\n    padding: 0 20px;\n    margin: 0 10px; }\n    .codeNav li:hover {\n      background-color: green; }\n\n.renderedPage {\n  max-width: 100%;\n  background-color: #fff;\n  border: 2px solid black;\n  padding: 10px;\n  color: black;\n  margin: 20px;\n  width: 500px;\n  word-wrap: break-word; }\n\n.answers {\n  font-weight: bold;\n  color: black;\n  display: inline-block;\n  margin-left: 10px;\n  padding: 5px;\n  text-align: center; }\n\n.correct {\n  background-color: green; }\n\n.wrong {\n  background-color: red; }\n", ""]);
 	
 	// exports
 
@@ -52276,7 +52276,7 @@
 /* 197 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <div ng-controller='mainCtrl'>\n        <div ng-repeat='player in nba.players'>\n          <h5><a href={{player.url}} target='_blank'> {{player.name}} </a> </h5>\n          <ul>\n            <li> Born: {{player.born}} </li>\n            <li> Height: {{player.height.feet}}' {{player.height.inches}}\" </li>\n            <li> Current Team: {{player.currentTeam}} </li>\n            <li> Championships:{{player.championships}}</li>\n            <li> NBA Finals MVP: {{player.nbaFinalsMVP}} </li>\n            <li> NBA MVP: {{player.mvp}} </li>\n            <li> NBA All Star Team: {{player.nbaAllstarTeam}} </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n        $scope.name = <input type='text' ng-model='name'> </input>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
+	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <div ng-controller='mainCtrl'>\n        <div ng-repeat='player in nba.players'>\n          <h5><a href={{player.url}} target='_blank'> {{player.name}} </a> </h5>\n          <ul>\n            <li> Born: {{player.born}} </li>\n            <li> Height: {{player.height.feet}}' {{player.height.inches}}\" </li>\n            <li> Current Team: {{player.currentTeam}} </li>\n            <li> Championships:{{player.championships}}</li>\n            <li> NBA Finals MVP: {{player.nbaFinalsMVP}} </li>\n            <li> NBA MVP: {{player.mvp}} </li>\n            <li> NBA All Star Team: {{player.nbaAllstarTeam}} </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
 
 /***/ },
 /* 198 */
@@ -52324,21 +52324,24 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 	
 	exports.default = function (ngModule) {
-		ngModule.directive('myNgClass', function () {
-			return {
-				replace: true,
-				restrict: 'E',
-				template: _myNgClass2.default,
-				scope: {},
-				controller: ['$scope', function ($scope) {
-					$scope.name = 'max';
-				}]
-			};
-		});
+	  ngModule.directive('myNgClass', function () {
+	    return {
+	      replace: true,
+	      restrict: 'E',
+	      template: _myNgClass2.default,
+	      scope: {},
+	      controller: ['$scope', function ($scope) {
+	        $scope.showHTML = true;
+	        $scope.html = '\n<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <title> Angular Tutorial </title>\n    <meta charset="utf-8"></meta>\n    <script src="angular.min.js" type="text/javascript"></script>\n    <script src="app.js" type="text/javascript"></script>\n    <style>\n      .answers {\n        font-weight: bold;\n        color: black;\n        display: inline-block;\n        margin-left: 10px;\n        padding: 5px;\n        text-align: center;\n      }\n      .correct {\n        background-color: green;\n      }\n      .wrong {\n        background-color: red;\n      }\n    </style>\n  </head>\n\n  <body ng-app=\'myApp\'>\n    <div ng-controller=\'ngClassCtrl\'>\n      <h2> Test </h2>\n      <ol>\n      <li> 2 + 2 = <input ng-model=\'questions.one\'>\n        <p ng-show=\'questions.one\'\n        ng-class=\'{correct: questions.one == 4, wrong: questions.one != 4}\'\n        class=\'answers\'>\n        Answer to one: {{questions.one}} </p>\n      </li>\n      <br>\n      <li> 7 * 3 = <input ng-model=\'questions.two\'>\n        <p ng-show=\'questions.two\'\n        ng-class=\'{correct: questions.two == 21, wrong: questions.two != 21}\'\n        class=\'answers\'>\n        Answer to two: {{questions.two}} </p>\n      </li>\n      <br>\n      <li> 2^4= <input ng-model=\'questions.three\'>\n        <p ng-show=\'questions.three\'\n        ng-class=\'{correct: questions.three == 16, wrong: questions.three != 16}\'\n        class=\'answers\'>\n        Answer to three: {{questions.three}} </p>\n      </li>\n    </ol>\n    </div>\n  </body>\n</html>';
+	        $scope.javascript = '\nvar app = angular.module(\'myApp\', []);\napp.controller(\'ngClassCtrl\', function($scope){\n  $scope.questions = {};\n});\n\t\t\t';
+	        $scope.description = '\n/* ng-class directive allows you to set CSS\nclasses to specific HTML elements by data binding\nan expression which will represent all the\nclasses to be added. If the expression evaluates\nto true then the resulting class will be applied\n\nIn this case we used the expression as a object.\nIf the expression evaluates to an object,\nthen for each key-value pair of the object\nwith a truthy value the corresponding key is\nused as a class name\nhttps://docs.angularjs.org/api/ng/directive/ngClass*/ ';
+	      }]
+	    };
+	  });
 	};
 	
 	var _myNgClass = __webpack_require__(201);
@@ -52351,7 +52354,7 @@
 /* 201 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <h2> Hello {{name}} </h2>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n        $scope.name = <input type='text' ng-model='name'> </input>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
+	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <h2> Test </h2>\n      <ol>\n      <li> 2 + 2 = <input ng-model='questions.one'>\n        <p ng-show='questions.one'\n        ng-class='{correct: questions.one == 4, wrong: questions.one != 4}'\n        class='answers'>\n        Answer to one: {{questions.one}} </p>\n      </li>\n      <br>\n      <li> 7 * 3 = <input ng-model='questions.two'>\n        <p ng-show='questions.two'\n        ng-class='{correct: questions.two == 21, wrong: questions.two != 21}'\n        class='answers'>\n        Answer to two: {{questions.two}} </p>\n      </li>\n      <br>\n      <li> 2^4= <input ng-model='questions.three'>\n        <p ng-show='questions.three'\n        ng-class='{correct: questions.three == 16, wrong: questions.three != 16}'\n        class='answers'>\n        Answer to three: {{questions.three}} </p>\n      </li>\n    </ol>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n</div>\n";
 
 /***/ },
 /* 202 */
@@ -52360,21 +52363,48 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 	
 	exports.default = function (ngModule) {
-		ngModule.directive('myNgClick', function () {
-			return {
-				replace: true,
-				restrict: 'E',
-				template: _myNgClick2.default,
-				scope: {},
-				controller: ['$scope', function ($scope) {
-					$scope.name = 'max';
-				}]
-			};
-		});
+	  ngModule.directive('myNgClick', function () {
+	    return {
+	      replace: true,
+	      restrict: 'E',
+	      template: _myNgClick2.default,
+	      scope: {},
+	      controller: ['$scope', function ($scope) {
+	        $scope.showHTML = true;
+	        $scope.contact = {};
+	        $scope.data = {};
+	        $scope.data.contacts = [{
+	          firstName: 'Max',
+	          lastName: 'Jacobsen',
+	          phoneNumber: '(503) 555-5555'
+	        }, {
+	          firstName: 'Al',
+	          lastName: 'She',
+	          phoneNumber: '(503) 444-4444'
+	        }, {
+	          firstName: 'Alex',
+	          lastName: 'Anderson',
+	          phoneNumber: '(503) 222-3333'
+	        }, {
+	          firstName: 'Who Ya',
+	          lastName: 'Gonna Call',
+	          phoneNumber: 'Ghost Busters!!'
+	        }];
+	        $scope.data.addContact = function (newContact) {
+	          $scope.data.contacts.push(newContact);
+	          $scope.contact = {};
+	        };
+	        $scope.html = '\n<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <title> Angular Tutorial </title>\n    <meta charset="utf-8"></meta>\n    <script src="angular.min.js" type="text/javascript"></script>\n    <script src="app.js" type="text/javascript"></script>\n  </head>\n\n  <body ng-app=\'myApp\'>\n    <div ng-controller=\'ngClickCtrl\'>\n      <div>\n        First Name: <input ng-model=\'contact.firstName\'>\n        <br><br>\n        Last Name:  <input ng-model=\'contact.lastName\'>\n        <br><br>\n        Contact: <input ng-model=\'contact.phoneNumber\'>\n        <br><br>\n        <button ng-click=\'data.addContact(contact)\'> Add Contact </button>\n      </div>\n      <div ng-repeat=\'contact in data.contacts\'>\n        <h5> {{contact.firstName}} {{contact.lastName}} </h5>\n        Phone Number: {{contact.phoneNumber}}\n      </div>\n    </div>\n  </body>\n</html>';
+	        $scope.javascript = '\nvar app = angular.module(\'myApp\', []);\n\napp.controller(\'ngClickCtrl\', function($scope){\n  $scope.contact = {};\n  $scope.data = {};\n  $scope.data.contacts = [\n    {\n      firstName: \'Max\',\n      lastName: \'Jacobsen\',\n      phoneNumber: \'(503) 555-5555\'\n    },\n    {\n      firstName: \'Al\',\n      lastName: \'She\',\n      phoneNumber: \'(503) 444-4444\'\n    },\n    {\n      firstName: \'Alex\',\n      lastName: \'Anderson\',\n      phoneNumber: \'(503) 222-3333\'\n    },\n    {\n      firstName: \'Who Ya\',\n      lastName: \'Gonna Call\',\n      phoneNumber: \'Ghost Busters!!\'\n    }];\n  $scope.data.addContact = function(newContact){\n    $scope.data.contacts.push(newContact);\n    $scope.contact = {};\n  };\n});\t';
+	
+	        $scope.description = '\n/* add the ng-click directive to any HTML element to call\na function within your scope or you can actually change\nvariables within the ng-click=\'contact.name = "default"\'\nwhen the element is clicked */';
+	      }]
+	    };
+	  });
 	};
 	
 	var _myNgClick = __webpack_require__(203);
@@ -52387,7 +52417,7 @@
 /* 203 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <h2> Hello {{name}} </h2>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n        $scope.name = <input type='text' ng-model='name'> </input>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
+	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <div>\n        First Name: <input ng-model='contact.firstName'>\n        <br><br>\n        Last Name:  <input ng-model='contact.lastName'>\n        <br><br>\n        Contact: <input ng-model='contact.phoneNumber'>\n        <br><br>\n        <button ng-click='data.addContact(contact)'> Add Contact </button>\n      </div>\n      <div ng-repeat='contact in data.contacts'>\n        <h5> {{contact.firstName}} {{contact.lastName}} </h5>\n        Phone Number: {{contact.phoneNumber}}\n      </div>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n        $scope.name = <input type='text' ng-model='name'> </input>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
 
 /***/ },
 /* 204 */
@@ -52396,21 +52426,28 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 	
 	exports.default = function (ngModule) {
-		ngModule.directive('myNgHideAndShow', function () {
-			return {
-				replace: true,
-				restrict: 'E',
-				template: _myNgHideAndShow2.default,
-				scope: {},
-				controller: ['$scope', function ($scope) {
-					$scope.name = 'max';
-				}]
-			};
-		});
+	  ngModule.directive('myNgHideAndShow', function () {
+	    return {
+	      replace: true,
+	      restrict: 'E',
+	      template: _myNgHideAndShow2.default,
+	      scope: {},
+	      controller: ['$scope', function ($scope) {
+	        $scope.view = {};
+	        $scope.view.showMe = true;
+	        $scope.view.name = 'max';
+	        $scope.view.category = 'sports';
+	        $scope.showHTML = true;
+	        $scope.html = '\n<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <title> Angular Tutorial </title>\n    <meta charset="utf-8"></meta>\n    <script src="angular.min.js" type="text/javascript"></script>\n    <script src="app.js" type="text/javascript"></script>\n  </head>\n\n  <body ng-app=\'myApp\'>\n    <div ng-controller=\'hideAndShowCtrl\'>\n      <div id=\'toggleBetweenOneVariable\'>\n        <h2 ng-show=\'view.showMe\'> I show up when view.showMe is TRUE\n        </h2>\n        <h2 ng-hide=\'view.showMe\'> Oh snap you must be FALSE view.showMe\n        </h2>\n      </div>\n      <div id=\'usingExpressionNgShow\'>\n        <h2 ng-show=\'view.name == "max"\'> view.name must equal\n          \'max\' because you can see me </h2>\n        <h2 ng-show=\'view.name == "angular"\'> view.name must equal\n          \'angular\' </h2>\n        <h2 ng-show=\'view.name == "cool"\'> view.name must equal\n          \'cool\' </h2>\n      </div>\n      <br> <br>\n      <select ng-model=\'view.category\'>\n        <option value=\'sports\'>Sports</option>\n        <option value=\'music\'>Music</option>\n        <option value=\'movies\'>Movies</option>\n      </select>\n      <div ng-show=\'view.category == "sports"\'>\n        <h5> Sports </h5>\n        <p>Sports are awesome. </p>\n        <p> Go Blazers and Timbers! </p>\n        <p> Basketball is my favorite sport </p>\n      </div>\n      <div ng-show=\'view.category == "music"\'>\n        <h5> Music </h5>\n        <ul> Genres:\n          <li> Country </li>\n          <li> Rap </li>\n          <li> Rock </li>\n        </ul>\n      </div>\n      <div ng-show=\'view.category == "movies"\'>\n        <h5> Movies </h5>\n        <p> Movies are great, enough said </p>\n      </div>\n    </div>\n  </body>\n</html>';
+	        $scope.javascript = '\nvar app = angular.module(\'myApp\', []);\napp.controller(\'hideAndShowCtrl\', function($scope){\n\t$scope.view = {};\n\t$scope.view.showMe = true;\n\t$scope.view.name = \'max\';\n\t$scope.view.category = \'sports\';\n});';
+	        $scope.description = '/* ng-show directive show or hides the given\nHTML element it is attached too and all of its children\nbased on the expression it is given. The element is shown\nor hidden by adding or removing .ng-hide class which is\npredefined in CSS. When the ng-show expression evaluates\nto falsy the the .ng-hide class is applied and when the\nexpression evaluates to truthy the .ng-hide class is removed */\n\n/* the ng-hide Class is:\n  .ng-hide {\n  display: none !important;\n  //important is used so the .ng-hide class is not overwritten\n} */\n\n/* ng-hide directive acts the same as ng-show only with\n opposite evaluation for appllying the ng-hide class.\n If the expression evaluates to truthy, then the class\n is applied and if it evaluates to falsy the class is\nremoved */';
+	      }]
+	    };
+	  });
 	};
 	
 	var _myNgHideAndShow = __webpack_require__(205);
@@ -52423,7 +52460,7 @@
 /* 205 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <h2> Hello {{name}} </h2>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n        $scope.name = <input type='text' ng-model='name'> </input>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
+	module.exports = "<div class=\"containsCode\">\n    <div class='renderedPage pure-u-1-2'>\n      <div>\n        <div id='toggleBetweenOneVariable'>\n          <h2 ng-show='view.showMe'> I show up when view.showMe is TRUE\n          </h2>\n          <h2 ng-hide='view.showMe'> Oh snap you must be FALSE view.showMe\n          </h2>\n        </div>\n        <div id='usingExpressionNgShow'>\n          <h2 ng-show='view.name == \"max\"'> view.name must equal\n            'max' because you can see me </h2>\n          <h2 ng-show='view.name == \"angular\"'> view.name must equal\n            'angular' </h2>\n          <h2 ng-show='view.name == \"cool\"'> view.name must equal\n            'cool' </h2>\n        </div>\n        <br> <br>\n        <select ng-model='view.category'>\n          <option value='sports'>Sports</option>\n          <option value='music'>Music</option>\n          <option value='movies'>Movies</option>\n        </select>\n        <div ng-show='view.category == \"sports\"'>\n          <h5> Sports </h5>\n          <p>Sports are awesome. </p>\n          <p> Go Blazers and Timbers! </p>\n          <p> Basketball is my favorite sport </p>\n        </div>\n        <div ng-show='view.category == \"music\"'>\n          <h5> Music </h5>\n          <ul> Genres:\n            <li> Country </li>\n            <li> Rap </li>\n            <li> Rock </li>\n          </ul>\n        </div>\n        <div ng-show='view.category == \"movies\"'>\n          <h5> Movies </h5>\n          <p> Movies are great, enough said </p>\n        </div>\n      </div>\n    </div>\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML'>\n        <pre><code class='html'>\n          {{html}}\n        </code></pre>\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n        Toggle $scope.view.showMe between true and false:\n        <button ng-click='view.showMe = !view.showMe'> {{view.showMe}}\n        </button> <br> <br>\n        $scope.view.name =<input ng-model='view.name' >\n        enter max, cool, or angular to see results\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
 
 /***/ },
 /* 206 */

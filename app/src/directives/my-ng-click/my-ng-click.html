@@ -1,6 +1,18 @@
 <div class="containsCode">
     <div class='renderedPage pure-u-1-2'>
-      <h2> Hello {{name}} </h2>
+      <div>
+        First Name: <input ng-model='contact.firstName'>
+        <br><br>
+        Last Name:  <input ng-model='contact.lastName'>
+        <br><br>
+        Contact: <input ng-model='contact.phoneNumber'>
+        <br><br>
+        <button ng-click='data.addContact(contact)'> Add Contact </button>
+      </div>
+      <div ng-repeat='contact in data.contacts'>
+        <h5> {{contact.firstName}} {{contact.lastName}} </h5>
+        Phone Number: {{contact.phoneNumber}}
+      </div>
     </div>
     <div class='actualCode'>
       <ul class='codeNav'>
