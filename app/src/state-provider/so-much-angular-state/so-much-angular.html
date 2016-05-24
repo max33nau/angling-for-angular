@@ -1,4 +1,16 @@
 <div class="content">
     <h2 class="content-subhead">So much more of AngularJS, so little time</h2>
-
+    <p> These links are using the custom directive we just created previously </p>
+    <h3> More features of AngularJS </h3>
+    <ul ng-repeat='docs in angular.documents'>
+      <li><a-target-blank my-url={{docs.url}} my-link-name={{docs.name}}> </a> </li>
+    </ul>
+    <h3> Using NodeJS and setting our AngularJS up using Webpack </h3>
+    <ul ng-repeat='setup in angular.projectSetUpAndTesting'>
+      <li><a-target-blank my-url={{setup.url}} my-link-name={{setup.name}}> </a> </li>
+    </ul>
+    <h3> Other Useful Resources </h3>
+    <ul ng-repeat='resource in angular.resources'>
+      <li><a-target-blank my-url={{resource.url}} my-link-name={{resource.name}}> </a> </li>
+    </ul>
 </div>
