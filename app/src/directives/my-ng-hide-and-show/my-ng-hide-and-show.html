@@ -1,6 +1,45 @@
 <div class="containsCode">
     <div class='renderedPage pure-u-1-2'>
-      <h2> Hello {{name}} </h2>
+      <div>
+        <div id='toggleBetweenOneVariable'>
+          <h2 ng-show='view.showMe'> I show up when view.showMe is TRUE
+          </h2>
+          <h2 ng-hide='view.showMe'> Oh snap you must be FALSE view.showMe
+          </h2>
+        </div>
+        <div id='usingExpressionNgShow'>
+          <h2 ng-show='view.name == "max"'> view.name must equal
+            'max' because you can see me </h2>
+          <h2 ng-show='view.name == "angular"'> view.name must equal
+            'angular' </h2>
+          <h2 ng-show='view.name == "cool"'> view.name must equal
+            'cool' </h2>
+        </div>
+        <br> <br>
+        <select ng-model='view.category'>
+          <option value='sports'>Sports</option>
+          <option value='music'>Music</option>
+          <option value='movies'>Movies</option>
+        </select>
+        <div ng-show='view.category == "sports"'>
+          <h5> Sports </h5>
+          <p>Sports are awesome. </p>
+          <p> Go Blazers and Timbers! </p>
+          <p> Basketball is my favorite sport </p>
+        </div>
+        <div ng-show='view.category == "music"'>
+          <h5> Music </h5>
+          <ul> Genres:
+            <li> Country </li>
+            <li> Rap </li>
+            <li> Rock </li>
+          </ul>
+        </div>
+        <div ng-show='view.category == "movies"'>
+          <h5> Movies </h5>
+          <p> Movies are great, enough said </p>
+        </div>
+      </div>
     </div>
     <div class='actualCode'>
       <ul class='codeNav'>
@@ -18,7 +57,11 @@
         <pre>
           <code> {{javascript}} </code>
         </pre>
-        $scope.name = <input type='text' ng-model='name'> </input>
+        Toggle $scope.view.showMe between true and false:
+        <button ng-click='view.showMe = !view.showMe'> {{view.showMe}}
+        </button> <br> <br>
+        $scope.view.name =<input ng-model='view.name' >
+        enter max, cool, or angular to see results
       </div>
 
       <div class='preCode' ng-show='showDescription'>

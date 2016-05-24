@@ -59,4 +59,5 @@ export default function( ngModule ) {
 	      url: 'https://en.wikipedia.org/wiki/Damian_Lillard'
 	    }]
 	});
+
 }
