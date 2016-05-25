@@ -9,7 +9,6 @@ export default function( ngModule ) {
   })
   .controller('goodExampleChildCtrl', function($scope){
     $scope.child = {};
-    $scope.child.name = 'I am my own scope';
   })
 	.controller('mainCtrl', function($scope){
 	  $scope.nba = {};

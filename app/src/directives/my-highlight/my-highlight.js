@@ -8,7 +8,8 @@ export default function( ngModule ) {
       scope: {
         myCode:'@'
       },
-      template: '<div hljs><pre> <code> {{myCode}}<h1> hi </h1> </code> </pre> </div>',
+      transclude: true,
+      template: '<div hljs><pre> <code> <ng-transclude> </ng-transclude> </code> </pre> </div>',
       link: {
         pre: function(scope,element,attr) {
         $compile(element[0]);
