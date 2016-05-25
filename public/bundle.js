@@ -82,7 +82,7 @@
 	
 	var _directives2 = _interopRequireDefault(_directives);
 	
-	var _controllers = __webpack_require__(215);
+	var _controllers = __webpack_require__(214);
 	
 	var _controllers2 = _interopRequireDefault(_controllers);
 	
@@ -35964,7 +35964,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/* Tomorrow Night Bright Theme */\n/* Original theme - https://github.com/chriskempson/tomorrow-theme */\n/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */\n/* Tomorrow Comment */\n.hljs-comment,\n.hljs-quote {\n  color: #969896; }\n\n/* Tomorrow Red */\n.hljs-variable,\n.hljs-template-variable,\n.hljs-tag,\n.hljs-name,\n.hljs-selector-id,\n.hljs-selector-class,\n.hljs-regexp,\n.hljs-deletion {\n  color: #d54e53; }\n\n/* Tomorrow Orange */\n.hljs-number,\n.hljs-built_in,\n.hljs-builtin-name,\n.hljs-literal,\n.hljs-type,\n.hljs-params,\n.hljs-meta,\n.hljs-link {\n  color: #e78c45; }\n\n/* Tomorrow Yellow */\n.hljs-attribute {\n  color: #e7c547; }\n\n/* Tomorrow Green */\n.hljs-string,\n.hljs-symbol,\n.hljs-bullet,\n.hljs-addition {\n  color: #b9ca4a; }\n\n/* Tomorrow Blue */\n.hljs-title,\n.hljs-section {\n  color: #7aa6da; }\n\n/* Tomorrow Purple */\n.hljs-keyword,\n.hljs-selector-tag {\n  color: #c397d8; }\n\n.hljs {\n  display: block;\n  overflow-x: auto;\n  background: black;\n  color: #eaeaea;\n  padding: 0.5em; }\n\n.hljs-emphasis {\n  font-style: italic; }\n\n.hljs-strong {\n  font-weight: bold; }\n\n.currentLink {\n  color: white !important; }\n\n.containsCode {\n  display: flex;\n  width: 100%;\n  justify-content: center;\n  flex-wrap: wrap;\n  align-items: flex-start; }\n\n.codeNav {\n  list-style: none;\n  background-color: black;\n  color: #d54e53;\n  padding: 5px;\n  cursor: pointer;\n  border: 1px solid #b9ca4a;\n  text-align: center; }\n  .codeNav li {\n    display: inline-block;\n    padding: 0 20px;\n    margin: 0 10px; }\n    .codeNav li:hover {\n      color: #b9ca4a; }\n\n.preCode {\n  background-color: black;\n  color: white;\n  padding: 5px; }\n\n.center {\n  margin: 0 auto;\n  text-align: center; }\n\n.color-black {\n  color: black !important; }\n\n.renderedPage {\n  max-width: 100%;\n  background-color: #fff;\n  border: 2px solid black;\n  padding: 10px;\n  color: black;\n  margin: 20px;\n  width: 500px;\n  word-wrap: break-word; }\n\n.answers {\n  font-weight: bold;\n  color: black;\n  display: inline-block;\n  margin-left: 10px;\n  padding: 5px;\n  text-align: center; }\n\n.correct {\n  background-color: green; }\n\n.wrong {\n  background-color: red; }\n\nbody {\n  margin-bottom: 100px; }\n\n.activeLink {\n  color: #fff !important; }\n\n.my-link {\n  text-decoration: none;\n  color: #56b8b8; }\n", ""]);
+	exports.push([module.id, "/* Tomorrow Night Bright Theme */\n/* Original theme - https://github.com/chriskempson/tomorrow-theme */\n/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */\n/* Tomorrow Comment */\n.hljs-comment,\n.hljs-quote {\n  color: #969896; }\n\n/* Tomorrow Red */\n.hljs-variable,\n.hljs-template-variable,\n.hljs-tag,\n.hljs-name,\n.hljs-selector-id,\n.hljs-selector-class,\n.hljs-regexp,\n.hljs-deletion {\n  color: #d54e53; }\n\n/* Tomorrow Orange */\n.hljs-number,\n.hljs-built_in,\n.hljs-builtin-name,\n.hljs-literal,\n.hljs-type,\n.hljs-params,\n.hljs-meta,\n.hljs-link {\n  color: #e78c45; }\n\n/* Tomorrow Yellow */\n.hljs-attribute {\n  color: #e7c547; }\n\n/* Tomorrow Green */\n.hljs-string,\n.hljs-symbol,\n.hljs-bullet,\n.hljs-addition {\n  color: #b9ca4a; }\n\n/* Tomorrow Blue */\n.hljs-title,\n.hljs-section {\n  color: #7aa6da; }\n\n/* Tomorrow Purple */\n.hljs-keyword,\n.hljs-selector-tag {\n  color: #c397d8; }\n\n.hljs {\n  display: block;\n  overflow-x: auto;\n  background: black;\n  color: #eaeaea;\n  padding: 0.5em; }\n\n.hljs-emphasis {\n  font-style: italic; }\n\n.hljs-strong {\n  font-weight: bold; }\n\n.currentLink {\n  color: white !important; }\n\n.containsCode {\n  display: flex;\n  width: 100%;\n  justify-content: center;\n  flex-wrap: wrap;\n  align-items: flex-start; }\n\n.codeNav {\n  list-style: none;\n  background-color: black;\n  color: #d54e53;\n  padding: 5px;\n  cursor: pointer;\n  border: 1px solid #b9ca4a;\n  text-align: center; }\n  .codeNav li {\n    display: inline-block;\n    padding: 0 20px;\n    margin: 0 10px; }\n    .codeNav li:hover {\n      color: #b9ca4a; }\n\n.preCode {\n  background-color: black;\n  color: white;\n  padding: 5px; }\n\n.center {\n  margin: 0 auto;\n  text-align: center; }\n\n.center-text {\n  text-align: center; }\n\n.color-black {\n  color: black !important; }\n\n.renderedPage {\n  max-width: 100%;\n  background-color: #fff;\n  border: 2px solid black;\n  padding: 10px;\n  color: black;\n  margin: 20px;\n  width: 500px;\n  word-wrap: break-word; }\n\n.answers {\n  font-weight: bold;\n  color: black;\n  display: inline-block;\n  margin-left: 10px;\n  padding: 5px;\n  text-align: center; }\n\n.correct {\n  background-color: green; }\n\n.wrong {\n  background-color: red; }\n\nbody {\n  margin-bottom: 100px; }\n\n.activeLink {\n  color: #fff !important; }\n\n.my-link {\n  text-decoration: none;\n  color: #56b8b8; }\n", ""]);
 	
 	// exports
 
@@ -61722,7 +61722,7 @@
 /* 179 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"content\">\n    <h2 class=\"content-subhead\">Why Choose AngularJS?</h2>\n    <ul>\n      <li> Reusability: the ability to create custom components through directives such as a main-nav or a login-form allows you to reuse these throughout your projects</li>\n      <li> Already embraces things that we already know such as HTML, CSS and JavaScript </li>\n      <li> Two-way data binding along with a lot of built in directives that solve issues we have been banging our head over using jQuery. </li>\n      <li> Simple dependency injection allowing the user to use other directives, services, and factories such as a router provider or animation services. </li>\n      <li> Built with testability in mind such as E2E and Unit Testing </li>\n      <li> Great for building small single page Apps </li>\n      <li> Easy to learn </li>\n      <li> Job opportunities won't disapear once Angular 2 comes out. A lot of companies are currently using version 1 and we still don't know when Angular 2 is even going to be released. </li>\n      <li> Check out all these web applications that are using Angular 1 <a href='https://www.madewithangular.com/#/' target=\"_blank\"> Made With Angular </a>\n    </ul>\n\n    <h2 class=\"content-subhead\">What you should not use Angular for</h2>\n    <ul>\n      <li> Building large web applications</li>\n      <li> If you think you have to know it in order to learn Angular 2 although it can't hurt</li>\n      <li> Gaming Applications</li>\n    </ul>\n</div>\n";
+	module.exports = "<div class=\"content\">\n    <h2 class=\"content-subhead\">Why Choose AngularJS?</h2>\n    <ul>\n      <li> Reusability: the ability to create custom components through directives such as a main-nav or a login-form allows you to reuse these throughout your projects</li>\n      <li> Already embraces things that we already know such as HTML, CSS and JavaScript </li>\n      <li> Two-way data binding along with a lot of built in directives that solve issues we have been banging our head over using jQuery. </li>\n      <li> Simple dependency injection allowing the user to use other directives, services, and factories such as a router provider or animation services. </li>\n      <li> Built with testability in mind such as E2E and Unit Testing </li>\n      <li> Great for building small single page Apps </li>\n      <li> Easy to learn </li>\n      <li> Job opportunities won't disapear once Angular 2 comes out. A lot of companies are currently using version 1. </li>\n      <li> Check out all these web applications that are using Angular 1 <a href='https://www.madewithangular.com/#/' target=\"_blank\"> Made With Angular </a>\n    </ul>\n</div>\n";
 
 /***/ },
 /* 180 */
@@ -61873,7 +61873,7 @@
 /* 187 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"content\">\n  <h2 class=\"content-subhead\">Custom Directives </h2>\n  <p>Used by AngularJS to extend the functionality of HTML. We can define these using the\n  directive function: app.directive('myCustomDirective', function(){\n    return {\n      customization of directive content goes here.\n    }\n  }) If this doesn't make sense we will show a example of how this all works below. We will be making a custom directive in the form of a element.</p>\n  <ul> Type of Custom Directives (activate when their matching directive is encountered):\n    <li> Elements - {{elementExample}} </li>\n    <li> Attribute - {{attributeExample}} </li>\n    <li> CSS - {{classExample}} </li>\n    <li> Comment - {{commentExample}} </li>\n  </ul>\n</div>\n  <div class=\"containsCode\">\n\n    <div class='renderedPage pure-u-1-2'>\n      Simple Example Of Custom Directive:\n      <a-target-blank my-link-name='Linkedin' my-url='https://www.linkedin.com/in/maxjacobsen33'> </a-target-blank>\n      <br>\n      <p>I can use my directive with a ng-repeat now to show a\n      better use of a-target-blank. Lets say if I want to link all\n      the projects I have done. </p>\n      <ul ng-repeat='project in my.projects'>\n        <li> <a-target-blank my-link-name={{project.name}} my-url={{project.url}}>\n        </a-target-blank> </li>\n      </ul>\n    </div>\n\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;' ng-class='{activeLink: showHTML == true}'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'\n        ng-class='{activeLink: showJavascript == true}'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'\n        ng-class='{activeLink: showDescription == true}'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML' hljs>\n<!-- <!DOCTYPE html>\n<html lang=\"en\">\n<head> -->\n<title> Angular Tutorial </title>\n<meta charset=\"utf-8\"></meta>\n<script src=\"angular.min.js\" type=\"text/javascript\"></script>\n<script src=\"app.js\" type=\"text/javascript\"></script>\n<!-- </head> -->\n\n<!-- <body> -->\n<div ng-app='myApp'>\n  <div ng-controller='customDirectiveCtrl'>\n    Simple Example Of Custom Directive:\n<a-target-blank my-link-name='Linkedin'\nmy-url='https://www.linkedin.com/in/maxjacobsen33'>\n</a-target-blank>\n    <br>\n    <p>I can use my directive with a ng-repeat now to show a\n    better use of a-target-blank. Lets say if I want to link all\n    the projects I have done. </p>\n    <ul ng-repeat='project in my.projects'>\n      <li> <a-target-blank my-link-name={{project.name}}\n      my-url={{project.url}}>\n      </a-target-blank> </li>\n    </ul>\n  </div>\n</div>\n<!-- </body>\n</html> -->\n      </div>\n\n      <div class='preCode' ng-show='showJavascript'>\n        <pre>\n          <code> {{javascript}} </code>\n        </pre>\n      </div>\n\n      <div class='preCode' ng-show='showDescription'>\n        <pre>\n          <code> {{description}} </code>\n        </pre>\n      </div>\n    </div>\n  </div>\n";
+	module.exports = "<div class=\"content\">\n  <h2 class=\"content-subhead\">Custom Directives </h2>\n  <p>Used by AngularJS to extend the functionality of HTML. We can define these using the\n  directive function: app.directive('myCustomDirective', function(){\n    return {\n      customization of directive content goes here.\n    }\n  }) If this doesn't make sense we will show a example of how this all works below. We will be making a custom directive in the form of a element.</p>\n  <ul> Type of Custom Directives (activate when their matching directive is encountered):\n    <li> Elements - {{elementExample}} </li>\n    <li> Attribute - {{attributeExample}} </li>\n    <li> CSS - {{classExample}} </li>\n    <li> Comment - {{commentExample}} </li>\n  </ul>\n</div>\n  <div class=\"containsCode\">\n\n    <div class='renderedPage pure-u-1-2'>\n      Simple Example Of Custom Directive:\n      <a-target-blank my-link-name='Linkedin' my-url='https://www.linkedin.com/in/maxjacobsen33'> </a-target-blank>\n      <br>\n      <p>I can use my directive with a ng-repeat now to show a\n      better use of a-target-blank. Lets say if I want to link all\n      the projects I have done. </p>\n      <ul ng-repeat='project in my.projects'>\n        <li> <a-target-blank my-link-name={{project.name}} my-url={{project.url}}>\n        </a-target-blank> </li>\n      </ul>\n    </div>\n\n    <div class='actualCode'>\n      <ul class='codeNav'>\n        <li ng-click='showHTML = true; showJavascript = false; showDescription = false;' ng-class='{activeLink: showHTML == true}'> index.html </li>\n        <li ng-click='showHTML = false; showJavascript = true; showDescription = false;'\n        ng-class='{activeLink: showJavascript == true}'> app.js </li>\n        <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'\n        ng-class='{activeLink: showDescription == true}'> Description </li>\n      </ul>\n      <div class='preCode' ng-show='showHTML' hljs>\n<!-- <!DOCTYPE html>\n<html lang=\"en\">\n<head> -->\n<title> Angular Tutorial </title>\n<meta charset=\"utf-8\"></meta>\n<script src=\"angular.min.js\" type=\"text/javascript\"></script>\n<script src=\"app.js\" type=\"text/javascript\"></script>\n<!-- </head> -->\n\n<!-- <body> -->\n<div ng-app='myApp'>\n  <div ng-controller='customDirectiveCtrl'>\n    Simple Example Of Custom Directive:\n<a-target-blank my-link-name='Linkedin'\nmy-url='https://www.linkedin.com/in/maxjacobsen33'>\n</a-target-blank>\n    <br>\n    <p>I can use my directive with a ng-repeat now to show a\n    better use of a-target-blank. Lets say if I want to link all\n    the projects I have done. </p>\n    <ul ng-repeat='project in my.projects'>\n      <li> <a-target-blank my-link-name={{project.name}}\n      my-url={{project.url}}>\n      </a-target-blank> </li>\n    </ul>\n  </div>\n</div>\n<!-- </body>\n</html> -->\n      </div>\n\n      <div class='preCode' ng-show='showJavascript' hljs>\n\nvar app = angular.module('myApp', []);\n\napp.controller('customDirectiveCtrl', function($scope){\n  $scope.my = {};\n  $scope.my.projects = [\n    {\n      name: 'Color Fish',\n      url: 'https://team-malex.2016.angularattack.io/#/color-fish'\n    },\n    {\n      name: 'Relax And Color',\n      url: 'https://relax-and-color.herokuapp.com/#/home'\n    },\n    {\n      name: 'Settlers Of Candyland',\n      url: ' ttp://max33nau.github.io/settlersOfCandyland/'\n    },\n    {\n      name: 'My Github',\n      url: 'https://github.com/max33nau'\n    }\n  ]\n});\n\napp.directive('aTargetBlank', function(){\n  return {\n    restrict: 'E',\n    template: '<a href=\"{{myUrl}}\" target=\"_blank\"> {{myLinkName}} </a>',\n    scope: {\n      myLinkName:'@',\n      myUrl: '@'\n    }\n  }\n})\n      </div>\n\n      <div class='preCode' ng-show='showDescription' hljs>\n/* Remember when we name our directive in camelCase,\nangularJS will convert it to snake-case. So when we\nuse the directive in our HTML it will be\n<a-target-blank> </a-target-blank>. */\n\n/* When we create a directive we are returning\na directive description object. This description\nobject will be the heart of our custom directive. */\n\n/* What is restrict?\nrestrict: specifies what type of directive it has to\nbe when we try to activate it later. In this case\nwe only want it to be used as a element so we say\nrestrict: 'E'. Other restrict options are\n'A' (attribute), 'C' (class), 'M' (comment)\n\n/* Template will be the content of our directive,\nhere we can use HTML and {{}} notation just like\nin normal AngularJS, here we are creating a\n<a> tags that will take a link and a url from the\nparent scope.*/\n\n/* scope: check out this newsletter to get a better\nunderstanding on using scope with these directives.\nhttp://www.ng-newsletter.com/posts/directives.html,\nfor now just know using '@' will read into our directive\nwhat we set in the element. */\n\n/* We could add a controller to our directive but it is\nnot necessary for right now. */\n      </div>\n    </div>\n  </div>\n";
 
 /***/ },
 /* 188 */
@@ -61975,7 +61975,7 @@
 /* 191 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"content\">\n    <h2 class=\"content-subhead\"><a-target-blank my-link-name='Angular 2' my-url='https://angular.io/' class='my-link'> </a-target-blank> is coming... </h2>\n</div>\n";
+	module.exports = "<div class=\"content\">\n    <h2 class=\"content-subhead center-text\"><a-target-blank my-link-name='Angular 2' my-url='https://angular.io/' class='my-link'> </a-target-blank> is Here</h2>\n</div>\n";
 
 /***/ },
 /* 192 */
@@ -62102,10 +62102,6 @@
 	
 	var _aTargetBlank2 = _interopRequireDefault(_aTargetBlank);
 	
-	var _myHighlight = __webpack_require__(214);
-	
-	var _myHighlight2 = _interopRequireDefault(_myHighlight);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var directives = angular.module('directives', []);
@@ -62118,7 +62114,6 @@
 	(0, _myNgClick2.default)(directives);
 	(0, _myNgHideAndShow2.default)(directives);
 	(0, _aTargetBlank2.default)(directives);
-	(0, _myHighlight2.default)(directives);
 	
 	exports.default = directives.name;
 
@@ -62473,45 +62468,11 @@
 	  value: true
 	});
 	
-	exports.default = function (ngModule) {
-	  ngModule.directive('myHighlight', ['$compile', function ($compile) {
-	    return {
-	      restrict: 'E',
-	      scope: {
-	        myCode: '@'
-	      },
-	      transclude: true,
-	      template: '<div hljs><pre> <code> <ng-transclude> </ng-transclude> </code> </pre> </div>',
-	      link: {
-	        pre: function pre(scope, element, attr) {
-	          $compile(element[0]);
-	        }
-	      }
-	    };
-	  }]);
-	};
-	
-	var _highlight = __webpack_require__(11);
-	
-	var _highlight2 = _interopRequireDefault(_highlight);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ },
-/* 215 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _badExampleCtrl = __webpack_require__(216);
+	var _badExampleCtrl = __webpack_require__(215);
 	
 	var _badExampleCtrl2 = _interopRequireDefault(_badExampleCtrl);
 	
-	var _goodExampleCtrl = __webpack_require__(217);
+	var _goodExampleCtrl = __webpack_require__(216);
 	
 	var _goodExampleCtrl2 = _interopRequireDefault(_goodExampleCtrl);
 	
@@ -62525,7 +62486,7 @@
 	exports.default = controllers.name;
 
 /***/ },
-/* 216 */
+/* 215 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -62541,7 +62502,7 @@
 	};
 
 /***/ },
-/* 217 */
+/* 216 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -62572,7 +62533,7 @@
 							mvp: 4,
 							url: 'https://en.wikipedia.org/wiki/LeBron_James'
 					}, {
-							name: 'Michale Jordan',
+							name: 'Michael Jordan',
 							height: { feet: 6, inches: 6 },
 							born: 'February 17, 1963',
 							currentTeam: 'Retired',

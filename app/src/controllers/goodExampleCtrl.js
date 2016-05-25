@@ -25,7 +25,7 @@ export default function( ngModule ) {
 	      url: 'https://en.wikipedia.org/wiki/LeBron_James'
 	    },
 	    {
-	      name: 'Michale Jordan',
+	      name: 'Michael Jordan',
 	      height: {feet: 6,inches: 6  },
 	      born: 'February 17, 1963',
 	      currentTeam: 'Retired',
