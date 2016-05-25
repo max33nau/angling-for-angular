@@ -16,9 +16,7 @@
         <li ng-click='showHTML = false; showJavascript = false; showDescription = true;'> Description </li>
       </ul>
       <div class='preCode' ng-show='showHTML'>
-        <pre><code class='html'>
-          {{html}}
-        </code></pre>
+        <my-highlight my-code='{{html}}'> </my-highlight>
       </div>
 
       <div class='preCode' ng-show='showJavascript'>

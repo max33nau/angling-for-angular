@@ -17,17 +17,17 @@
 .codeNav {
   list-style: none;
   background-color: black;
-  color: red;
+  color: #d54e53;
   padding: 5px;
   cursor: pointer;
-  border: 1px solid red;
+  border: 1px solid #b9ca4a;
   text-align: center;
   li {
     display: inline-block;
     padding: 0 20px;
     margin: 0 10px;
     &:hover {
-      background-color: green;
+      color: #b9ca4a;
     }
   }
 }
@@ -70,4 +70,8 @@
 }
 .wrong {
   background-color: red;
+}
+
+body {
+  margin-bottom: 100px;
 }

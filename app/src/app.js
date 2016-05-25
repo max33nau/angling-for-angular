@@ -9,14 +9,15 @@ import './purecss/side-menu.css';
 
 /* STYLES */
 import './styles/main.scss';
-
+import $ from 'jquery';
 /* highlight.js */
 import hljs from 'highlight.js';
 hljs.initHighlightingOnLoad();
 
+
 import 'angular-highlightjs';
 
-import $ from 'jquery';
+
 
 /* UI-Router State Provider Config */
 import configStateProvider from './state-provider';
@@ -33,6 +34,7 @@ import controllers from './controllers';
 
 
 const app = angular.module('myApp', [
+  'hljs',
   stateRouter,
   stateCtrls,
   directives,
@@ -78,12 +80,6 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlR
     } else {
       $rootScope.root.noNext = false;
     }
-  });
-  $rootScope.$on('$stateChangeSuccess',function(event, toState, toParams, fromState, fromParams) {
-    $('#main').find('pre code').each(function(i,block){
-      console.log(block);
-      hljs.highlightBlock(block);
-    });
   });
 }]);
 

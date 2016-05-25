@@ -1,6 +1,7 @@
 'use strict';
-/* highlight.js */
+
 import template from './getting-started.html';
+
 
 export default {
   url: '/getting-started',
